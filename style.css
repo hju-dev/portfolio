@@ -643,6 +643,58 @@ section {
 }
 
 /* ================================
+   CERTIFICATIONS
+   ================================ */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.cert-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+
+.cert-card:hover {
+  border-color: var(--border-hover);
+}
+
+.cert-platform {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--green);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.4rem;
+}
+
+.cert-name {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.cert-meta {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.cert-status {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.complete    { color: var(--green); }
+.in-progress { color: #fbbe32; }
+.queued      { color: var(--text-dim); }
+
+/* ================================
    DEV LOG
    ================================ */
 .devlog-list {
