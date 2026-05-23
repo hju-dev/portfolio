@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Mode — Airplane Mode Off. Global Mode On.</title>
+  <meta name="description" content="A road trip companion that removes the stress of planning and replaces it with the joy of discovery. Built for Thailand. Built for adventure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <svg class="nav-globe" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="32" cy="32" r="26" stroke="#f5f2ec" stroke-width="2"/>
+        <ellipse cx="32" cy="32" rx="14" ry="26" stroke="#f5f2ec" stroke-width="1.5"/>
+        <line x1="6" y1="22" x2="58" y2="22" stroke="#f5f2ec" stroke-width="1.5"/>
+        <line x1="6" y1="32" x2="58" y2="32" stroke="#f5f2ec" stroke-width="1.5"/>
+        <line x1="6" y1="42" x2="58" y2="42" stroke="#f5f2ec" stroke-width="1.5"/>
+        <circle cx="44" cy="18" r="5" fill="#f0a500"/>
+        <path d="M44 23 L44 30" stroke="#f0a500" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-wordmark">GLOBAL <span>MODE</span></span>
+    </a>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="max-width:100%; padding-left:2rem; padding-right:2rem;">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div class="globe-wrap" aria-hidden="true">
+      <svg class="hero-globe" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="88" stroke="#f5f2ec" stroke-width="2.5" stroke-opacity="0.9"/>
+        <ellipse cx="100" cy="100" rx="46" ry="88" stroke="#f5f2ec" stroke-width="1.5" stroke-opacity="0.5"/>
+        <ellipse cx="100" cy="100" rx="75" ry="88" stroke="#f5f2ec" stroke-width="1" stroke-opacity="0.25"/>
+        <ellipse cx="100" cy="68" rx="82" ry="20" stroke="#f5f2ec" stroke-width="1" stroke-opacity="0.4"/>
+        <line x1="12" y1="100" x2="188" y2="100" stroke="#f5f2ec" stroke-width="1" stroke-opacity="0.4"/>
+        <ellipse cx="100" cy="132" rx="82" ry="20" stroke="#f5f2ec" stroke-width="1" stroke-opacity="0.4"/>
+        <circle cx="100" cy="100" r="92" stroke="#0ecfc0" stroke-width="0.5" stroke-opacity="0.3"/>
+      </svg>
+      <div class="globe-pin-pulse"></div>
+    </div>
+    <p class="hero-pretag">Thailand — and beyond</p>
+    <h1 class="hero-title">GLOBAL<br><span class="accent">MODE</span></h1>
+    <p class="hero-tagline"><strong>Airplane Mode Off.</strong> Global Mode On.</p>
+    <div class="hero-actions">
+      <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+      <a href="#what" class="btn-ghost">Learn More</a>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- WHAT IS IT -->
+  <section id="what" style="padding: 7rem 2rem; max-width: 1100px; margin: 0 auto;">
+    <div class="what-grid">
+      <div class="reveal">
+        <span class="section-label">What is Global Mode</span>
+        <h2 class="section-title">THE ROAD <span style="color:var(--amber)">FINDS</span> YOU</h2>
+        <p class="section-body">A road trip companion built for people who find A-to-B boring. Global Mode handles the research, the planning, and the decisions — so you can just set off and explore. Built for Thailand first, with the whole world next.</p>
+        <br>
+        <p class="section-body" style="color: rgba(245,242,236,0.4); font-style: italic; font-size: 0.9rem;">"It's like having a travel buddy whose entire job is making sure you have the best trip of your life."</p>
+      </div>
+      <div class="reveal reveal-delay-2 road-svg-wrap">
+        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" width="100%" aria-hidden="true">
+          <defs>
+            <radialGradient id="horizonGlow" cx="50%" cy="40%" r="50%">
+              <stop offset="0%" stop-color="#0ecfc0" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#0a0e1a" stop-opacity="0"/>
+            </radialGradient>
+            <clipPath id="roadClip"><rect x="0" y="0" width="300" height="300"/></clipPath>
+          </defs>
+          <rect width="300" height="300" fill="url(#horizonGlow)"/>
+          <g transform="translate(150,95)">
+            <circle r="52" stroke="#f5f2ec" stroke-width="1.5" fill="none" stroke-opacity="0.7"/>
+            <ellipse rx="27" ry="52" stroke="#f5f2ec" stroke-width="1" fill="none" stroke-opacity="0.35"/>
+            <ellipse cx="0" cy="-18" rx="48" ry="12" stroke="#f5f2ec" stroke-width="0.8" fill="none" stroke-opacity="0.3"/>
+            <line x1="-52" y1="0" x2="52" y2="0" stroke="#f5f2ec" stroke-width="0.8" stroke-opacity="0.3"/>
+            <ellipse cx="0" cy="18" rx="48" ry="12" stroke="#f5f2ec" stroke-width="0.8" fill="none" stroke-opacity="0.3"/>
+            <circle cx="20" cy="-22" r="6" fill="#f0a500"/>
+            <line x1="20" y1="-16" x2="20" y2="-6" stroke="#f0a500" stroke-width="2" stroke-linecap="round"/>
+          </g>
+          <line x1="0" y1="160" x2="300" y2="160" stroke="#f5f2ec" stroke-width="0.5" stroke-opacity="0.15"/>
+          <path d="M 100 300 L 140 160 L 160 160 L 200 300 Z" fill="#161d2e"/>
+          <path d="M 95 300 L 137 160 L 163 160 L 205 300 Z" stroke="#f5f2ec" stroke-width="1" fill="none" stroke-opacity="0.15"/>
+          <g clip-path="url(#roadClip)">
+            <rect class="road-dash" x="148" y="180" width="4" height="22" rx="2" fill="#f0a500" fill-opacity="0.7"/>
+            <rect class="road-dash" x="148" y="220" width="4" height="22" rx="2" fill="#f0a500" fill-opacity="0.7"/>
+            <rect class="road-dash" x="148" y="260" width="4" height="22" rx="2" fill="#f0a500" fill-opacity="0.7"/>
+          </g>
+          <ellipse cx="150" cy="160" rx="80" ry="6" fill="#0ecfc0" fill-opacity="0.08"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <div class="features-section">
+    <div class="features-inner">
+      <span class="section-label reveal">Built different</span>
+      <h2 class="section-title reveal">WHAT MAKES <span style="color:var(--teal)">GLOBAL MODE</span></h2>
+      <div class="features-grid">
+        <div class="feature-card reveal reveal-delay-1" style="--accent-color: var(--amber);">
+          <span class="feature-icon" aria-hidden="true">🧭</span>
+          <div class="feature-name">JUST GO</div>
+          <p class="feature-desc">No destination. No rigid plan. Set off and let the road surprise you.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2" style="--accent-color: var(--teal);">
+          <span class="feature-icon" aria-hidden="true">🌊</span>
+          <div class="feature-name">DRIFT MODE</div>
+          <p class="feature-desc">Tell us how you feel right now. We'll build the perfect trip around it.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3" style="--accent-color: var(--amber);">
+          <span class="feature-icon" aria-hidden="true">🔀</span>
+          <div class="feature-name">FORK IN THE ROAD</div>
+          <p class="feature-desc">One tap. Instant detour. No planning required.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-4" style="--accent-color: var(--teal);">
+          <span class="feature-icon" aria-hidden="true">📍</span>
+          <div class="feature-name">STAMPS</div>
+          <p class="feature-desc">Earn achievements by exploring hidden gems and completing road trip challenges.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1" style="--accent-color: #a78bfa;">
+          <span class="feature-icon" aria-hidden="true">🚗</span>
+          <div class="feature-name">CO-PILOT MODE</div>
+          <p class="feature-desc">Connect with your passenger for a shared road trip experience built for both of you.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2" style="--accent-color: var(--amber);">
+          <span class="feature-icon" aria-hidden="true">🙈</span>
+          <div class="feature-name">SPOILERS</div>
+          <p class="feature-desc">Reveal everything or conceal it all. Your trip, your rules.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION CARD -->
+  <section class="card-section" id="explore">
+    <span class="section-label reveal">Sample location</span>
+    <h2 class="section-title reveal">SEE IT IN <span style="color:var(--amber)">ACTION</span></h2>
+    <p class="section-body reveal">Every location in Global Mode is researched, rated, and tagged — so you know exactly what you're getting into before you arrive.</p>
+
+    <div class="location-card reveal reveal-delay-2">
+      <div class="card-image">
+        <img src="tham-lumphini-suan-hin.png" alt="Cave survey map of Tham Lumphini Suan Hin, Saraburi Province, Thailand">
+        <div class="card-image-overlay"></div>
+        <span class="card-image-badge">Globe Approved</span>
+        <span class="card-adventure">Go Rogue</span>
+        <span class="card-map-credit">Survey: D. Smart et al. / SMCC · M. Ellis 2025</span>
+      </div>
+      <div class="card-body">
+        <div class="card-rating" aria-label="Rated Legendary">
+          <div class="rating-dot legendary"></div>
+          <div class="rating-dot legendary"></div>
+          <div class="rating-dot legendary"></div>
+          <div class="rating-dot legendary"></div>
+          <span class="rating-label">Legendary</span>
+        </div>
+        <h3 class="card-location-name">Tham Lumphini Suan Hin</h3>
+        <p class="card-region">Saraburi Province · Central Thailand</p>
+        <p class="card-description">A 2km stream passage carved through Early Permian limestone. In the dry season you keep your boots dry. In the wet season, you swim. One of the longest caves in the province — and one of the least visited.</p>
+        <div class="card-tags">
+          <span class="tag tag-unreal">Unreal</span>
+          <span class="tag tag-offmap">Off the Map</span>
+          <span class="tag tag-bold">For the Bold</span>
+          <span class="tag tag-norail">No English Signs</span>
+        </div>
+        <div class="card-meta">
+          <div class="card-meta-items">
+            <div class="card-meta-item">
+              <div class="card-meta-dot"></div>
+              <span>Dry season only</span>
+            </div>
+            <div class="card-meta-item">
+              <div class="card-meta-dot teal"></div>
+              <span>Torch required</span>
+            </div>
+          </div>
+          <button class="card-wishlist" id="wishBtn" onclick="toggleWish()">+ Wanderlist</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <div class="waitlist-section" id="waitlist">
+    <div class="waitlist-inner">
+      <span class="section-label reveal" style="display:block; text-align:center;">Early access</span>
+      <h2 class="waitlist-title reveal">ROAM <span style="color:var(--teal)">FREE</span></h2>
+      <p class="waitlist-sub reveal">Global Mode launches in Thailand first. Join the waitlist and be among the first to set off. Early members earn <strong style="color:var(--white)">Trailblazer</strong> status — a stamp you'll only ever earn once.</p>
+      <div class="waitlist-form reveal reveal-delay-1">
+        <input type="email" class="waitlist-input" id="emailInput" placeholder="your@email.com" aria-label="Email address"/>
+        <button class="btn-primary" onclick="submitWaitlist()">Just Go →</button>
+      </div>
+      <p class="waitlist-note reveal reveal-delay-2">No spam. No noise. Just a heads up when we're ready.</p>
+      <p class="waitlist-success" id="successMsg" role="alert">You're on the list. Adventure incoming. 🌏</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">GLOBAL <span>MODE</span></div>
+    <div class="footer-tagline">Airplane Mode Off. Global Mode On.</div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
