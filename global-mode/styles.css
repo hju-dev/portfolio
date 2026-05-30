@@ -361,9 +361,7 @@ section {
   line-height: 1.8;
 }
 
-
 /* ── WHAT SECTION ── */
-
 .what-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -396,6 +394,19 @@ section {
     transform: translateY(80px) scaleY(1.8) scaleX(1.4); 
     opacity: 0; 
   }
+}
+
+.road-globe-float {
+  animation: globeFloat 6s ease-in-out infinite;
+}
+
+@keyframes roadPinPulse {
+  0%   { r: 4; opacity: 0.8; }
+  100% { r: 10; opacity: 0; }
+}
+
+.road-pin-pulse {
+  animation: roadPinPulse 2s ease-out infinite;
 }
 
 /* ── FEATURES ── */
