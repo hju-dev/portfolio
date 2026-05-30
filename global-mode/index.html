@@ -77,7 +77,7 @@
           <clipPath id="roadClip"><rect x="0" y="0" width="300" height="300"/></clipPath>
         </defs>
         <rect width="300" height="300" fill="url(#horizonGlow)"/>
-    <g transform="translate(150,95)">
+    <g transform="translate(150,95)" class="road-globe-float">
       <!-- outer circle -->
       <circle r="52" stroke="#f5f2ec" stroke-width="1.5" fill="none" stroke-opacity="0.9"/>
       <!-- longitude lines -->
@@ -89,8 +89,10 @@
       <ellipse cx="0" cy="19" rx="48" ry="12" stroke="#f5f2ec" stroke-width="0.6" fill="none" stroke-opacity="0.4"/>
       <!-- teal outer ring -->
       <circle r="54" stroke="#0ecfc0" stroke-width="0.4" fill="none" stroke-opacity="0.3"/>
-      <!-- pin -->
-      <circle cx="12" cy="-26" r="4" fill="#f0a500"/>
+      <!-- pin pulse -->
+      <circle cx="12" cy="-26" r="4" fill="#f0a500" opacity="0.8"/>
+      <circle cx="12" cy="-26" r="4" fill="#f0a500" class="road-pin-pulse"/>
+      <!-- pin stem -->
       <line x1="12" y1="-22" x2="12" y2="-14" stroke="#f0a500" stroke-width="1.5" stroke-linecap="round"/>
     </g>
         <line x1="0" y1="160" x2="300" y2="160" stroke="#f5f2ec" stroke-width="0.5" stroke-opacity="0.15"/>
