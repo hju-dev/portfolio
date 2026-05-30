@@ -298,18 +298,14 @@ nav {
 
 
 /* ── SCROLL HINT ── */
-
 .scroll-hint {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 1.4s;
+  margin-top: 3rem;
 }
 
 .scroll-hint span {
@@ -332,7 +328,6 @@ nav {
   51%  { transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
 }
-
 
 /* ── SECTION BASE ── */
 
