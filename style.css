@@ -303,7 +303,9 @@ section {
    ABOUT
    ================================ */
 .about-grid {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 .about-text {
@@ -317,12 +319,9 @@ section {
 }
 
 .about-stats {
-  float: right;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  width: 48%;
-  margin: 0 0 1rem 1.25rem;
 }
 
 .stat-card {
@@ -356,6 +355,15 @@ section {
   color: #fbbe32;
 }
 
+@media (min-width: 600px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ================================
    SKILLS
