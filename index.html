@@ -15,7 +15,6 @@
       <li><a href="#about">about</a></li>
       <li><a href="#skills">skills</a></li>
       <li><a href="#projects">projects</a></li>
-      <li><a href="#client-work">client work</a></li>
       <li><a href="#certs">certs</a></li>
       <li><a href="#devlog">devlog</a></li>
       <li><a href="#contact">contact</a></li>
@@ -50,37 +49,37 @@
 
   <hr class="divider">
 
-  <!-- ABOUT -->
-  <section id="about" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 01 — about</span>
-      <h2 class="section-title">Who I am.</h2>
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+  <div class="section-header">
+    <span class="section-tag">// 01 — about</span>
+    <h2 class="section-title">Who I am.</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a developer transitioning into AI integration work, currently working through the freeCodeCamp full-stack curriculum alongside hands-on AI tooling. Based in Thailand. Available for remote contracts.</p>
+      <p>I believe in learning in public, so this site grows with me. No fake seniority, no inflated experience — just consistent daily progress and real projects built from scratch.</p>
+      <p>My edge: native English speaker in a non-English market, real freelance project experience in Wix development, and a cost structure that lets me take on entry-level contracts without needing senior rates to survive.</p>
     </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I'm a developer transitioning into AI integration work, currently working through the freeCodeCamp full-stack curriculum alongside hands-on AI tooling. Based in Thailand. Available for remote contracts.</p>
-        <p>I believe in learning in public, so this site grows with me. No fake seniority, no inflated experience — just consistent daily progress and real projects built from scratch.</p>
-        <p>My edge: native English speaker in a non-English market, real freelance project experience in Wix development, and a cost structure that lets me take on entry-level contracts without needing senior rates to survive.</p>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-label">// current focus</div>
+        <div class="stat-value">AI Integration Dev</div>
       </div>
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-label">// current focus</div>
-          <div class="stat-value">AI Integration Dev</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">// based in</div>
-          <div class="stat-value">Thailand 🇹🇭</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">// status</div>
-          <div class="stat-value open">open to work</div>
-        </div>
+      <div class="stat-card">
+        <div class="stat-label">// based in</div>
+        <div class="stat-value">Thailand 🇹🇭</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">// status</div>
+        <div class="stat-value open">open to work</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <hr class="divider">
-
+<hr class="divider">
+    
   <!-- SKILLS -->
   <section id="skills" class="fade-in">
     <div class="section-header">
@@ -184,9 +183,42 @@
       <h2 class="section-title">What I'm building.</h2>
     </div>
 
-    <!-- FLAGSHIP -->
+    <!-- RAENG — FLAGSHIP -->
+    <div class="project-featured project-raeng">
+      <span class="project-badge raeng-badge">// personal project — live PWA</span>
+      <div class="project-title raeng-title">Raeng</div>
+      <div class="project-subtitle raeng-subtitle">แรง · IMPETUS &nbsp;·&nbsp; Workout Tracker PWA</div>
+      <p class="project-desc">
+        A full-stack mobile PWA for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs).
+        Built to live on an iPhone home screen — no browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Clerk auth, workout plan management, and a full export/account system.
+      </p>
+      <div class="project-features raeng-features">
+        <div class="feature-pill raeng-pill">5-day split tracker</div>
+        <div class="feature-pill raeng-pill">Auto rest timer</div>
+        <div class="feature-pill raeng-pill">Wave set logging</div>
+        <div class="feature-pill raeng-pill">Epley 1RM estimator</div>
+        <div class="feature-pill raeng-pill">Workout plan system</div>
+        <div class="feature-pill raeng-pill">Neon (Postgres) DB</div>
+        <div class="feature-pill raeng-pill">Clerk auth</div>
+        <div class="feature-pill raeng-pill">iOS PWA install</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">React</span>
+        <span class="tag">Vite</span>
+        <span class="tag">PWA</span>
+        <span class="tag">Neon (Postgres)</span>
+        <span class="tag">Clerk</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">JavaScript</span>
+      </div>
+      <div class="hero-cta" style="margin-top: 1.5rem;">
+        <a class="btn raeng-btn-primary" href="https://liftapp-six.vercel.app" target="_blank">Open App →</a>
+      </div>
+    </div>
+
+    <!-- GLOBAL MODE -->
     <div class="project-featured">
-      <span class="project-badge">// flagship project — phase 1</span>
+      <span class="project-badge">// personal project — phase 1</span>
       <div class="project-title">Global Mode</div>
       <div class="project-subtitle">Road Trip Companion App · Thailand-first</div>
       <p class="project-desc">
@@ -213,84 +245,6 @@
         <a class="btn btn-primary" href="global-mode/" target="_blank">View Landing Page →</a>
       </div>
     </div>
-
-    <!-- AI PROJECTS GRID -->
-    <div class="projects-grid">
-      <div class="project-card">
-        <span class="project-badge">// portfolio project 2 — in planning</span>
-        <div class="project-title-sm">AI Document Chatbot</div>
-        <p class="project-desc">Upload a document, ask questions, get answers from it. Demonstrates RAG (Retrieval Augmented Generation), Python, and the OpenAI API end-to-end.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">RAG</span>
-          <span class="tag">OpenAI API</span>
-          <span class="tag">in planning</span>
-        </div>
-      </div>
-      <div class="project-card">
-        <span class="project-badge">// portfolio project 3 — in planning</span>
-        <div class="project-title-sm">Business Automation</div>
-        <p class="project-desc">A trigger-based workflow (form, email, or spreadsheet) that fires an AI-powered action. Built to demonstrate real business value using Make.com and APIs.</p>
-        <div class="project-tags">
-          <span class="tag">Make.com</span>
-          <span class="tag">APIs</span>
-          <span class="tag">Python</span>
-          <span class="tag">in planning</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- CLIENT WORK -->
-  <section id="client-work" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 04 — client work</span>
-      <h2 class="section-title">Delivered for clients.</h2>
-    </div>
-    <div class="projects-grid">
-
-      <!-- Big T's Bakery -->
-      <div class="project-card client-card">
-        <span class="project-badge client-badge">// freelance · delivered</span>
-        <div class="project-title-sm">Big T's Bakery</div>
-        <div class="project-subtitle">Custom e-commerce site · Thailand</div>
-        <p class="project-desc">Hand-coded a bilingual (EN/TH) single-page bakery site from scratch after scoping out that a managed platform wasn't the right fit. Includes a live order builder with pack-size pricing, custom icing colour surcharges, a PromptPay QR checkout flow, and a LINE ordering integration. Deployed on GitHub Pages with a custom domain via Squarespace DNS.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">GitHub Pages</span>
-          <span class="tag">Bilingual EN/TH</span>
-        </div>
-        <div class="client-links">
-          <a class="btn btn-ghost" href="https://bigtsbakery.com" target="_blank">Live Site →</a>
-        </div>
-      </div>
-
-      <!-- Grass Roots Sports -->
-      <div class="project-card client-card">
-        <span class="project-badge client-badge">// freelance · built, awaiting launch</span>
-        <div class="project-title-sm">Grass Roots Sports</div>
-        <div class="project-subtitle">Full-stack web app · Pattaya, Thailand</div>
-        <p class="project-desc">Built a full production web app for a sports nonprofit running youth, teen, and adult basketball programs. Features bilingual EN/TH routing, a multi-step registration form with PromptPay QR payment, email confirmations via Resend, a Sanity CMS for content management, Clerk authentication protecting an admin dashboard, and a Neon (Postgres) database for registrations and contact messages.</p>
-        <div class="project-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Tailwind CSS</span>
-          <span class="tag">Sanity CMS</span>
-          <span class="tag">Neon (Postgres)</span>
-          <span class="tag">Clerk</span>
-          <span class="tag">Bilingual EN/TH</span>
-        </div>
-        <div class="client-links">
-          <a class="btn btn-ghost" href="https://grassrootssports.org" target="_blank">Live Site →</a>
-        </div>
-      </div>
-
-    </div>
   </section>
 
   <hr class="divider">
@@ -298,7 +252,7 @@
   <!-- CERTIFICATIONS -->
   <section id="certs" class="fade-in">
     <div class="section-header">
-      <span class="section-tag">// 05 — certifications</span>
+      <span class="section-tag">// 04 — certifications</span>
       <h2 class="section-title">Proof of progress.</h2>
     </div>
     <div class="certs-grid">
@@ -316,7 +270,7 @@
   <!-- DEVLOG -->
   <section id="devlog" class="fade-in">
     <div class="section-header">
-      <span class="section-tag">// 06 — dev log</span>
+      <span class="section-tag">// 05 — dev log</span>
       <h2 class="section-title">Building in public.</h2>
     </div>
     <div class="devlog-list">
@@ -342,7 +296,7 @@
   <!-- CONTACT -->
   <section id="contact" class="fade-in">
     <div class="section-header">
-      <span class="section-tag">// 07 — contact</span>
+      <span class="section-tag">// 06 — contact</span>
       <h2 class="section-title">Let's talk.</h2>
     </div>
     <div class="contact-inner">
