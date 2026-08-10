@@ -30,6 +30,7 @@ const phrases = [
   'pip install langchain',
   'git push origin main',
   'node server.js',
+  'cd raeng',
   'cd global-mode'
 ];
 
