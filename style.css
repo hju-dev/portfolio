@@ -541,6 +541,102 @@ section {
 }
 
 /* ================================
+   CLIENT WORK CARDS
+   ================================ */
+.client-card {
+  border-color: rgba(123, 174, 255, 0.2);
+}
+
+.client-card:hover {
+  border-color: rgba(123, 174, 255, 0.5);
+}
+
+.client-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(123, 174, 255, 0.1);
+  color: #7baeff;
+  margin-bottom: 0.75rem;
+}
+
+.client-links {
+  margin-top: 1rem;
+}
+
+/* Full-width card spanning both columns */
+.projects-grid .project-card[style*="grid-column"] {
+  grid-column: 1 / -1;
+}
+
+/* ================================
+   MEMORY MATTERS CARD
+   ================================ */
+.mm-card {
+  background: linear-gradient(135deg, #04111f 0%, #071d35 100%);
+  border-color: rgba(74, 180, 230, 0.3);
+}
+
+.mm-card:hover {
+  border-color: rgba(74, 180, 230, 0.65);
+}
+
+.mm-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(74, 180, 230, 0.12);
+  color: #4ab4e6;
+  margin-bottom: 0.75rem;
+}
+
+.mm-title {
+  color: #ffffff;
+}
+
+.mm-subtitle {
+  color: rgba(74, 180, 230, 0.7);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mm-card .project-desc {
+  color: #b8cfe0;
+}
+
+.mm-card .tag {
+  border-color: rgba(74, 180, 230, 0.25);
+  color: rgba(74, 180, 230, 0.8);
+}
+
+.mm-btn {
+  background: transparent;
+  color: #4ab4e6;
+  border: 1px solid rgba(74, 180, 230, 0.5);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.mm-btn:hover {
+  border-color: #4ab4e6;
+  background: rgba(74, 180, 230, 0.1);
+}
+
+/* ================================
    RAENG PROJECT CARD
    ================================ */
 .project-raeng {
