@@ -511,6 +511,181 @@ section {
   color: var(--text-dim);
 }
 
+.project-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+  position: relative;
+}
+
+/* Small card lockup — used on project-card (not project-featured) */
+.card-logo-lockup-sm {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.project-card:hover .card-logo-lockup-sm {
+  opacity: 1;
+}
+
+/* Give top text area clearance from lockup */
+.grs-card .project-badge,
+.grs-card .project-title-sm,
+.grs-card .project-subtitle,
+.bts-card .project-badge,
+.bts-card .project-title-sm,
+.bts-card .project-subtitle {
+  padding-right: 7rem;
+}
+
+/* ================================
+   GRASS ROOTS SPORTS CARD
+   ================================ */
+.grs-card {
+  background: linear-gradient(135deg, #050e05 0%, #0a1a0a 100%);
+  border-color: rgba(163, 230, 53, 0.2);
+}
+
+.grs-card:hover {
+  border-color: rgba(163, 230, 53, 0.5);
+}
+
+.grs-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.grs-card:hover .grs-logo-img {
+  opacity: 1;
+}
+
+.grs-badge {
+  background: rgba(163, 230, 53, 0.1);
+  color: #a3e635;
+}
+
+.grs-title {
+  color: #ffffff;
+}
+
+.grs-subtitle {
+  color: rgba(163, 230, 53, 0.6);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.grs-card .project-desc {
+  color: rgba(220, 240, 200, 0.75);
+}
+
+.grs-card .tag {
+  border-color: rgba(163, 230, 53, 0.2);
+  color: rgba(163, 230, 53, 0.7);
+}
+
+.grs-btn {
+  background: transparent;
+  color: #a3e635;
+  border: 1px solid rgba(163, 230, 53, 0.4);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.grs-btn:hover {
+  border-color: #a3e635;
+  background: rgba(163, 230, 53, 0.08);
+}
+
+/* ================================
+   BIG T'S BAKERY CARD
+   ================================ */
+.bts-card {
+  background: linear-gradient(135deg, #1a0a08 0%, #221210 100%);
+  border-color: rgba(232, 130, 106, 0.2);
+}
+
+.bts-card:hover {
+  border-color: rgba(232, 130, 106, 0.5);
+}
+
+.bts-logo-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  opacity: 0.9;
+}
+
+.bts-card:hover .bts-logo-img {
+  opacity: 1;
+}
+
+.bts-badge {
+  background: rgba(232, 130, 106, 0.1);
+  color: #e8826a;
+}
+
+.bts-title {
+  color: #ffffff;
+}
+
+.bts-subtitle {
+  color: rgba(232, 130, 106, 0.6);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.bts-card .project-desc {
+  color: rgba(245, 225, 215, 0.75);
+}
+
+.bts-card .tag {
+  border-color: rgba(232, 130, 106, 0.2);
+  color: rgba(232, 130, 106, 0.7);
+}
+
+.bts-btn {
+  background: transparent;
+  color: #e8826a;
+  border: 1px solid rgba(232, 130, 106, 0.4);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.bts-btn:hover {
+  border-color: #e8826a;
+  background: rgba(232, 130, 106, 0.08);
+}
+
 /* ================================
    PROJECT CARDS GRID
    ================================ */
@@ -518,14 +693,6 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-}
-
-.project-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  transition: border-color 0.2s;
 }
 
 .project-card:hover {
@@ -538,6 +705,134 @@ section {
   font-weight: 700;
   color: #fff;
   margin: 0.6rem 0 0.4rem;
+}
+
+/* ================================
+   CARD LOGO LOCKUPS (top-right)
+   ================================ */
+.project-featured {
+  position: relative;
+}
+
+/* Give top content area enough right clearance for the lockup */
+.project-featured .project-badge,
+.project-featured .project-title,
+.project-featured .project-subtitle {
+  padding-right: 9rem;
+}
+
+.card-logo-lockup {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.project-featured:hover .card-logo-lockup {
+  opacity: 1;
+}
+
+/* Raeng lockup text */
+.raeng-lockup-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.raeng-lockup-name {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #c8f135;
+  line-height: 1;
+}
+
+.raeng-lockup-sub {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: rgba(200, 241, 53, 0.55);
+  line-height: 1;
+}
+
+/* Global Mode lockup */
+.gm-lockup-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.gm-lockup-name {
+  font-family: 'Bebas Neue', var(--mono), monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #f5f2ec;
+  line-height: 1;
+}
+
+.gm-lockup-name span {
+  color: #f0a500;
+}
+
+/* ================================
+   GLOBAL MODE CARD
+   ================================ */
+.project-gm {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1628 100%);
+  border-color: rgba(240, 165, 0, 0.3);
+}
+
+.project-gm:hover {
+  border-color: rgba(240, 165, 0, 0.6);
+}
+
+.gm-badge {
+  background: rgba(240, 165, 0, 0.12);
+  color: #f0a500;
+}
+
+.gm-title {
+  color: #f5f2ec;
+}
+
+.gm-subtitle {
+  color: rgba(14, 207, 192, 0.7);
+}
+
+.gm-desc {
+  color: rgba(245, 242, 236, 0.7);
+}
+
+.gm-pill {
+  background: rgba(240, 165, 0, 0.07);
+  border-color: rgba(240, 165, 0, 0.18);
+  color: rgba(240, 165, 0, 0.75);
+}
+
+.gm-pill::before {
+  color: #f0a500;
+}
+
+.gm-tag {
+  border-color: rgba(14, 207, 192, 0.2);
+  color: rgba(14, 207, 192, 0.7);
+}
+
+.gm-btn {
+  background: #f0a500;
+  color: #0a0e1a;
+  border: 1px solid #f0a500;
+  font-weight: 700;
+}
+
+.gm-btn:hover {
+  background: #c17f00;
+  border-color: #c17f00;
 }
 
 /* ================================
