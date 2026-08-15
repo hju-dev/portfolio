@@ -748,7 +748,7 @@ section {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #c8f135;
+  color: #00ff88;
   line-height: 1;
 }
 
@@ -756,7 +756,7 @@ section {
   font-family: var(--mono);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
-  color: rgba(200, 241, 53, 0.55);
+  color: rgba(0, 255, 136, 0.55);
   line-height: 1;
 }
 
@@ -936,47 +936,47 @@ section {
    ================================ */
 .project-raeng {
   background: #0f0f0f;
-  border-color: rgba(200, 241, 53, 0.35);
+  border-color: rgba(0, 255, 136, 0.35);
 }
 
 .project-raeng:hover {
-  border-color: rgba(200, 241, 53, 0.7);
+  border-color: rgba(0, 255, 136, 0.7);
 }
 
 .raeng-badge {
-  background: rgba(200, 241, 53, 0.12);
-  color: #c8f135;
+  background: rgba(0, 255, 136, 0.12);
+  color: #00ff88;
 }
 
 .raeng-title {
-  color: #c8f135;
+  color: #00ff88;
   letter-spacing: 0.08em;
 }
 
 .raeng-subtitle {
-  color: rgba(200, 241, 53, 0.6);
+  color: rgba(0, 255, 136, 0.6);
 }
 
 .raeng-pill {
-  background: rgba(200, 241, 53, 0.07);
-  border-color: rgba(200, 241, 53, 0.15);
-  color: rgba(200, 241, 53, 0.75);
+  background: rgba(0, 255, 136, 0.07);
+  border-color: rgba(0, 255, 136, 0.15);
+  color: rgba(0, 255, 136, 0.75);
 }
 
 .raeng-pill::before {
-  color: #c8f135;
+  color: #00ff88;
 }
 
 .raeng-btn-primary {
-  background: #c8f135;
+  background: #00ff88;
   color: #0f0f0f;
-  border: 1px solid #c8f135;
+  border: 1px solid #00ff88;
   font-weight: 700;
 }
 
 .raeng-btn-primary:hover {
-  background: #b8e020;
-  border-color: #b8e020;
+  background: #00cc6a;
+  border-color: #00cc6a;
 }
 
 /* ================================
