@@ -1,0 +1,17 @@
+{
+  "name": "hju-dev-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "hju.dev static portfolio + RAG chat widget backend",
+  "scripts": {
+    "ingest": "node scripts/ingest.js"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.0",
+    "@upstash/ratelimit": "^2.0.0",
+    "@upstash/redis": "^1.34.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
