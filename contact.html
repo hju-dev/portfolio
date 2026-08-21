@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – hju.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html"><span>//</span> hju.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="client-work.html">client work</a></li>
+      <li><a href="contact.html" aria-current="page">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTACT -->
+  <section id="contact" class="fade-in first-section">
+    <div class="section-header">
+      <span class="section-tag">// 01 — contact</span>
+      <h2 class="section-title">Let's talk.</h2>
+    </div>
+    <div class="contact-inner">
+      <h3>Open to freelance & remote work</h3>
+      <p>AI chatbots · workflow automation · AI-powered tools · web development.<br>Got a project? Want to follow the build? Just say hello.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:henryjunderwood@gmail.com">Email</a>
+        <a class="btn btn-ghost" href="https://github.com/hju-dev" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>// hju.dev · built by henry james underwood · Thailand 🇹🇭 · <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- CHAT WIDGET -->
+  <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
+    <span class="chat-toggle-icon">//</span>
+  </button>
+
+  <div id="chat-panel">
+    <div class="chat-panel-header">
+      <span class="chat-panel-title">// ask about henry</span>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chat-log"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" maxlength="500">
+      <button id="chat-submit" class="btn btn-primary" type="submit">Send</button>
+    </form>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>

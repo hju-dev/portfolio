@@ -10,20 +10,19 @@
 <body>
 
   <nav>
-    <a class="nav-logo" href="#hero"><span>//</span> hju.dev</a>
+    <a class="nav-logo" href="index.html"><span>//</span> hju.dev</a>
     <ul class="nav-links">
-      <li><a href="#about">about</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#client-work">client work</a></li>
-      <li><a href="#certs">certs</a></li>
-      <li><a href="#devlog">devlog</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="index.html" aria-current="page">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="client-work.html">client work</a></li>
+      <li><a href="contact.html">contact</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <canvas id="neural-canvas" class="hero-canvas-bg" aria-hidden="true"></canvas>
     <p class="hero-label">// ai integration developer in training</p>
     <h1>Henry James<br><span class="accent">Underwood.</span></h1>
     <p class="hero-sub">
@@ -43,376 +42,36 @@
       <div class="term-line"><span class="prompt">$ </span><span id="typing-cmd"></span><span id="cursor"></span></div>
     </div>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#projects">view projects</a>
-      <a class="btn btn-ghost" href="#contact">get in touch</a>
+      <a class="btn btn-primary" href="projects.html">view projects</a>
+      <a class="btn btn-ghost" href="contact.html">get in touch</a>
     </div>
   </section>
 
   <hr class="divider">
 
-  <!-- ABOUT -->
-  <section id="about" class="fade-in">
+  <!-- EXPLORE -->
+  <section id="explore" class="fade-in">
     <div class="section-header">
-      <span class="section-tag">// 01 — about</span>
-      <h2 class="section-title">Who I am.</h2>
+      <span class="section-tag">// where to next</span>
+      <h2 class="section-title">Explore.</h2>
     </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I'm a web developer and AI integration specialist with three years of delivered client work spanning custom-coded sites, full-stack web apps, and a long-running Wix Studio rebuild for a US nonprofit. I build things that work - bilingual e-commerce, Postgres-backed registration systems, PWAs that live on your home screen - and I maintain them long after launch.</p>
-        <p>Currently moving into AI integration: Python, LangChain, the Anthropic and OpenAI APIs, and RAG pipelines. The web dev foundation is solid. The AI layer is next.</p>
-        <p>Native English speaker based in Thailand. Solo operator. Available for remote contracts. No degree required, just results.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-label">// current focus</div>
-          <div class="stat-value">AI Integration Dev</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">// based in</div>
-          <div class="stat-value">Thailand 🇹🇭</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">// status</div>
-          <div class="stat-value open">open to work</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- SKILLS -->
-  <section id="skills" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 02 — skills</span>
-      <h2 class="section-title">My stack.</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-group-label">// languages</div>
-        <div class="skill-item">
-          <span class="skill-name">HTML</span>
-          <span class="skill-status status-solid">solid</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">CSS</span>
-          <span class="skill-status status-solid">solid</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">JavaScript</span>
-          <span class="skill-status status-learning">solid</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Python</span>
-          <span class="skill-status status-learning">learning</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-label">// ai & machine learning</div>
-        <div class="skill-item">
-          <span class="skill-name">Neural Networks</span>
-          <span class="skill-status status-learning">learning</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">RAG</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">LangGraph</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Hugging Face</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Anthropic API</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-label">// tools & platforms</div>
-        <div class="skill-item">
-          <span class="skill-name">Git & GitHub</span>
-          <span class="skill-status status-solid">solid</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Wix Studio</span>
-          <span class="skill-status status-solid">solid</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Next.js</span>
-          <span class="skill-status status-solid">solid</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Vercel + Neon</span>
-          <span class="skill-status status-solid">solid</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">APIs / REST</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-label">// next up</div>
-        <div class="skill-item">
-          <span class="skill-name">FastAPI</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">AWS</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">System Design</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-        <div class="skill-item">
-          <span class="skill-name">Vector Databases</span>
-          <span class="skill-status status-exploring">queued</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- PROJECTS -->
-  <section id="projects" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 03 — projects</span>
-      <h2 class="section-title">What I'm building.</h2>
-    </div>
-
-    <!-- RAENG — FLAGSHIP -->
-    <div class="project-featured project-raeng">
-      <!-- Logo lockup top-right -->
-      <div class="card-logo-lockup raeng-lockup" aria-hidden="true">
-        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="60" height="60" rx="7" fill="none" stroke="#00ff88" stroke-width="2.5"/>
-          <line x1="10" y1="32" x2="54" y2="32" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="32" y1="10" x2="32" y2="54" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="32" cy="32" r="5" fill="none" stroke="#00ff88" stroke-width="1.8"/>
-        </svg>
-        <div class="raeng-lockup-text">
-          <div class="raeng-lockup-name">RAENG</div>
-          <div class="raeng-lockup-sub">แรง · IMPETUS</div>
-        </div>
-      </div>
-      <span class="project-badge raeng-badge">// personal project — live PWA</span>
-      <div class="project-title raeng-title">Raeng</div>
-      <div class="project-subtitle raeng-subtitle">แรง · IMPETUS &nbsp;·&nbsp; Workout Tracker PWA</div>
-      <p class="project-desc">
-        A full-stack mobile PWA for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs).
-        Built to live on an iPhone home screen. No browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Clerk auth, workout plan management, and a full export/account system.
-      </p>
-      <div class="project-features raeng-features">
-        <div class="feature-pill raeng-pill">5-day split tracker</div>
-        <div class="feature-pill raeng-pill">Auto rest timer</div>
-        <div class="feature-pill raeng-pill">Wave set logging</div>
-        <div class="feature-pill raeng-pill">Epley 1RM estimator</div>
-        <div class="feature-pill raeng-pill">Workout plan system</div>
-        <div class="feature-pill raeng-pill">Neon (Postgres) DB</div>
-        <div class="feature-pill raeng-pill">Clerk auth</div>
-        <div class="feature-pill raeng-pill">iOS PWA install</div>
-      </div>
-      <div class="project-tags">
-        <span class="tag">React</span>
-        <span class="tag">Vite</span>
-        <span class="tag">PWA</span>
-        <span class="tag">Neon (Postgres)</span>
-        <span class="tag">Clerk</span>
-        <span class="tag">Vercel</span>
-        <span class="tag">JavaScript</span>
-      </div>
-      <div class="hero-cta" style="margin-top: 1.5rem;">
-        <a class="btn raeng-btn-primary" href="https://raeng-impetus.vercel.app" target="_blank">Open App →</a>
-      </div>
-    </div>
-
-    <!-- GLOBAL MODE -->
-    <div class="project-featured project-gm">
-      <!-- Logo lockup top-right -->
-      <div class="card-logo-lockup gm-lockup" aria-hidden="true">
-        <svg class="gm-globe" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-          <circle cx="32" cy="32" r="28" stroke="#f5f2ec" stroke-width="1.5" stroke-opacity="0.9"/>
-          <ellipse cx="32" cy="32" rx="15" ry="28" stroke="#f5f2ec" stroke-width="1" stroke-opacity="0.5"/>
-          <ellipse cx="32" cy="32" rx="24" ry="28" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.25"/>
-          <ellipse cx="32" cy="22" rx="26" ry="6" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.4"/>
-          <line x1="4" y1="32" x2="60" y2="32" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.4"/>
-          <ellipse cx="32" cy="42" rx="26" ry="6" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.4"/>
-          <circle cx="32" cy="32" r="29" stroke="#0ecfc0" stroke-width="0.4" stroke-opacity="0.3"/>
-          <circle cx="44" cy="17" r="4" fill="#f0a500"/>
-        </svg>
-        <div class="gm-lockup-text">
-          <div class="gm-lockup-name">GLOBAL <span>MODE</span></div>
-        </div>
-      </div>
-      <span class="project-badge gm-badge">// personal project — phase 1</span>
-      <div class="project-title gm-title">Global Mode</div>
-      <div class="project-subtitle gm-subtitle">Road Trip Companion App · Thailand-first</div>
-      <p class="project-desc gm-desc">
-        Google Maps gets you from A to B. Global Mode gets you everywhere worth going in between.
-        A mobile-first travel app built for road trippers who want scenic routes, vibe filters, honest local data, and a co-driver experience, not just an ETA.
-      </p>
-      <div class="project-features gm-features">
-        <div class="feature-pill gm-pill">Vibe factor filters</div>
-        <div class="feature-pill gm-pill">Scenic road routing</div>
-        <div class="feature-pill gm-pill">Spoiler blocker toggle</div>
-        <div class="feature-pill gm-pill">Road quality ratings</div>
-        <div class="feature-pill gm-pill">Co-driver mode</div>
-        <div class="feature-pill gm-pill">SOS button</div>
-        <div class="feature-pill gm-pill">Fuel stop planner</div>
-        <div class="feature-pill gm-pill">Community data</div>
-      </div>
-      <div class="project-tags">
-        <span class="tag gm-tag">React</span>
-        <span class="tag gm-tag">JavaScript</span>
-        <span class="tag gm-tag">Mobile-first</span>
-        <span class="tag gm-tag">Phase 1 — in progress</span>
-      </div>
-      <div class="hero-cta" style="margin-top: 1.5rem;">
-        <a class="btn gm-btn" href="global-mode/" target="_blank">View Landing Page →</a>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- CLIENT WORK -->
-  <section id="client-work" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 04 — client work</span>
-      <h2 class="section-title">Delivered for clients.</h2>
-    </div>
-    <div class="projects-grid">
-
-      <!-- Memory Matters — FLAGSHIP CLIENT -->
-      <div class="project-card client-card mm-card" style="grid-column: 1 / -1;">
-        <span class="project-badge mm-badge">// freelance · flagship · 2+ years maintained</span>
-        <div class="project-title-sm mm-title">Memory Matters</div>
-        <div class="project-subtitle mm-subtitle">Nonprofit brain health organization · Hilton Head Island, SC · mymemorymatters.org</div>
-        <p class="project-desc">Completely rebuilt and relaunched the site for a nationally recognized dementia care and brain health nonprofit serving the South Carolina Lowcountry. Took over a disorganized existing site and delivered a polished, professional rebuild. Then, stayed on as the sole developer maintaining and expanding it for over two years. The site handles a wide range of real-world nonprofit needs: multi-program listings, event calendars, newsletter signup, donation flows, caregiver support resources, a member portal, and multiple location pages. Built on Wix Studio with custom Velo/JavaScript for dynamic behavior beyond what the visual editor supports.</p>
-        <div class="project-tags">
-          <span class="tag">Wix Studio</span>
-          <span class="tag">Velo / JavaScript</span>
-          <span class="tag">Multi-program site</span>
-          <span class="tag">Donation flows</span>
-          <span class="tag">Event calendar</span>
-          <span class="tag">Member portal</span>
-          <span class="tag">2+ years maintained</span>
-        </div>
-        <div class="client-links">
-          <a class="btn mm-btn" href="https://www.mymemorymatters.org" target="_blank">Live Site →</a>
-        </div>
-      </div>
-
-      <!-- Grass Roots Sports -->
-      <div class="project-card client-card grs-card">
-        <div class="card-logo-lockup-sm grs-lockup" aria-hidden="true">
-          <img src="https://grassrootssports.org/logo.jpg" alt="Grass Roots Sports" class="grs-logo-img">
-        </div>
-        <span class="project-badge grs-badge">// freelance · built, awaiting launch</span>
-        <div class="project-title-sm grs-title">Grass Roots Sports</div>
-        <div class="project-subtitle grs-subtitle">Full-stack web app · Pattaya, Thailand</div>
-        <p class="project-desc">Built a full production web app for a sports nonprofit running youth, teen, and adult basketball programs. Features bilingual EN/TH routing, a multi-step registration form with PromptPay QR payment, email confirmations via Resend, a Sanity CMS for content management, Clerk authentication protecting an admin dashboard, and a Neon (Postgres) database for registrations and contact messages.</p>
-        <div class="project-tags">
-          <span class="tag">Next.js</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Tailwind CSS</span>
-          <span class="tag">Sanity CMS</span>
-          <span class="tag">Neon (Postgres)</span>
-          <span class="tag">Clerk</span>
-          <span class="tag">Bilingual EN/TH</span>
-        </div>
-        <div class="client-links">
-          <a class="btn grs-btn" href="https://grassrootssports.org" target="_blank">Live Site →</a>
-        </div>
-      </div>
-
-      <!-- Big T's Bakery -->
-      <div class="project-card client-card bts-card">
-        <div class="card-logo-lockup-sm bts-lockup" aria-hidden="true">
-          <img src="https://bigtsbakery.com/images/logo.png" alt="Big T's Bakery" class="bts-logo-img">
-        </div>
-        <span class="project-badge bts-badge">// freelance · delivered</span>
-        <div class="project-title-sm bts-title">Big T's Bakery</div>
-        <div class="project-subtitle bts-subtitle">Custom e-commerce site · Thailand</div>
-        <p class="project-desc">Hand-coded a bilingual (EN/TH) single-page bakery site from scratch after scoping out that a managed platform wasn't the right fit. Includes a live order builder with pack-size pricing, custom icing colour surcharges, a PromptPay QR checkout flow, and a LINE ordering integration. Deployed on GitHub Pages with a custom domain via Squarespace DNS.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">GitHub Pages</span>
-          <span class="tag">Bilingual EN/TH</span>
-        </div>
-        <div class="client-links">
-          <a class="btn bts-btn" href="https://bigtsbakery.com" target="_blank">Live Site →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- CERTIFICATIONS -->
-  <section id="certs" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 05 — certifications</span>
-      <h2 class="section-title">Proof of progress.</h2>
-    </div>
-    <div class="certs-grid">
-      <div class="cert-card">
-        <div class="cert-platform">// freeCodeCamp</div>
-        <div class="cert-name">Responsive Web Design</div>
-        <div class="cert-meta">Tests: HTML · CSS</div>
-        <div class="cert-status complete">✓ complete</div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- DEVLOG -->
-  <section id="devlog" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 06 — dev log</span>
-      <h2 class="section-title">Building in public.</h2>
-    </div>
-    <div class="devlog-list">
-      <div class="log-entry">
-        <div class="log-date">2026 — May</div>
-        <div>
-          <div class="log-title">// roadmap locked in</div>
-          <div class="log-body">12-month plan finalized: Python foundation → AI APIs → LangChain + RAG → deployment → freelance. Pivot from full-stack generalist to AI Integration Developer. Portfolio project specs written. Starting Google IT Automation with Python.</div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <div class="log-date">2026 — day 01</div>
-        <div>
-          <div class="log-title">// site is live</div>
-          <div class="log-body">Launched hju.dev. Built with pure HTML, CSS, and JS... no frameworks yet. First step in building in public. Global Mode project spec is written. Now I learn how to build it.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- CONTACT -->
-  <section id="contact" class="fade-in">
-    <div class="section-header">
-      <span class="section-tag">// 07 — contact</span>
-      <h2 class="section-title">Let's talk.</h2>
-    </div>
-    <div class="contact-inner">
-      <h3>Open to freelance & remote work</h3>
-      <p>AI chatbots · workflow automation · AI-powered tools · web development.<br>Got a project? Want to follow the build? Just say hello.</p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:henryjunderwood@gmail.com">Email</a>
-        <a class="btn btn-ghost" href="https://github.com/hju-dev" target="_blank">GitHub</a>
-      </div>
+    <div class="quicklinks-grid">
+      <a class="quicklink-card" href="about.html">
+        <div class="quicklink-title">About &amp; Skills</div>
+        <div class="quicklink-desc">Who I am, what I know, and how I got here.</div>
+      </a>
+      <a class="quicklink-card" href="projects.html">
+        <div class="quicklink-title">Projects</div>
+        <div class="quicklink-desc">Raeng, Global Mode, and what I'm building next.</div>
+      </a>
+      <a class="quicklink-card" href="client-work.html">
+        <div class="quicklink-title">Client Work</div>
+        <div class="quicklink-desc">Delivered, hand-coded, production sites for real clients.</div>
+      </a>
+      <a class="quicklink-card" href="contact.html">
+        <div class="quicklink-title">Contact</div>
+        <div class="quicklink-desc">Open to freelance &amp; remote work — let's talk.</div>
+      </a>
     </div>
   </section>
 
@@ -421,6 +80,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="neural-bg.js"></script>
 
   <!-- CHAT WIDGET -->
   <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
