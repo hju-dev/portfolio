@@ -7,15 +7,15 @@
 
 ## about
 
-Henry Underwood is a web developer and AI integration specialist with three years of delivered client work spanning custom-coded sites, full-stack web apps, and a long-running Wix Studio rebuild for a US nonprofit. He builds things that work — bilingual e-commerce, Postgres-backed registration systems, PWAs that live on your home screen — and maintains them long after launch.
+Henry Underwood is a web developer and AI integration specialist with three years of delivered client work spanning custom-coded sites, full-stack web apps, and a long-running Wix Studio rebuild for a US nonprofit. He builds things that work - bilingual e-commerce, Postgres-backed registration systems, PWAs that live on your home screen - and maintains them long after launch.
 
 He's currently moving into AI integration: Python, LangChain, the Anthropic and OpenAI APIs, and RAG pipelines. The web dev foundation is solid. The AI layer is next.
 
-Native English speaker based in Thailand. Solo operator. Available for remote contracts — no degree required, just results.
+Native English speaker based in Thailand. Solo operator. Available for remote contracts. No degree required, just results.
 
 ## skills
 
-Languages: HTML (solid), CSS (solid), JavaScript (learning), Python (learning).
+Languages: HTML (solid), CSS (solid), JavaScript (solid), Python (learning).
 
 AI & ML: Neural Networks (learning), RAG (queued), LangGraph (queued), Hugging Face (queued), Anthropic API (queued).
 
@@ -25,7 +25,7 @@ Next up: FastAPI, AWS, System Design, Vector Databases (all queued).
 
 ## project-raeng
 
-Raeng (แรง · IMPETUS) is a full-stack mobile workout tracker PWA built for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs). Built to live on an iPhone home screen — no browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Clerk auth, workout plan management, and a full export/account system.
+Raeng (แรง · IMPETUS) is a full-stack mobile workout tracker PWA built for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs). Built to live on an iPhone home screen. No browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Clerk auth, workout plan management, and a full export/account system.
 
 Features: 5-day split tracker, auto rest timer, wave set logging, Epley 1RM estimator, workout plan system, Neon (Postgres) database, Clerk auth, iOS PWA install.
 
@@ -41,7 +41,7 @@ Status: Phase 1 — in progress. Stack: React, JavaScript, mobile-first.
 
 ## client-memory-matters
 
-Memory Matters is a nonprofit brain health organization based in Hilton Head Island, SC (mymemorymatters.org). Henry completely rebuilt and relaunched the site for this nationally recognized dementia care and brain health nonprofit serving the South Carolina Lowcountry, taking over a disorganized existing site and delivering a polished, professional rebuild — then stayed on as the sole developer maintaining and expanding it for over two years.
+Memory Matters is a nonprofit brain health organization based in Hilton Head Island, SC (mymemorymatters.org). Henry completely rebuilt and relaunched the site for this nationally recognized dementia care and brain health nonprofit serving the South Carolina Lowcountry, taking over a disorganized existing site and delivering a polished, professional rebuild. He then stayed on as the sole developer maintaining and expanding it for over two years.
 
 The site handles a wide range of real-world nonprofit needs: multi-program listings, event calendars, newsletter signup, donation flows, caregiver support resources, a member portal, and multiple location pages. Built on Wix Studio with custom Velo/JavaScript for dynamic behavior beyond what the visual editor supports.
 

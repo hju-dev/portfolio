@@ -110,7 +110,11 @@ async function main() {
   if (!dbUrl) throw new Error('Missing NEON_INGEST_DATABASE_URL in local .env');
 
   const sql = neon(dbUrl);
-  const markdown = await fs.readFile(CONTENT_PATH, 'utf8');
+  // Normalize line endings before parsing/hashing -- Windows checkouts with
+  // core.autocrlf=true rewrite this file to CRLF, which would otherwise
+  // change every multi-line chunk's content_hash on every git operation
+  // and trigger needless re-embeds.
+  const markdown = (await fs.readFile(CONTENT_PATH, 'utf8')).replace(/\r\n/g, '\n');
   const chunks = parseChunks(markdown);
 
   if (chunks.length === 0) {
