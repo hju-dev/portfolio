@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects – hju.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html"><span>//</span> hju.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html" aria-current="page">projects</a></li>
+      <li><a href="client-work.html">client work</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="fade-in first-section">
+    <div class="section-header">
+      <span class="section-tag">// 01 — projects</span>
+      <h2 class="section-title">What I'm building.</h2>
+    </div>
+
+    <!-- RAENG — FLAGSHIP -->
+    <div class="project-featured project-raeng">
+      <!-- Logo lockup top-right -->
+      <div class="card-logo-lockup raeng-lockup" aria-hidden="true">
+        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="60" height="60" rx="7" fill="none" stroke="#00ff88" stroke-width="2.5"/>
+          <line x1="10" y1="32" x2="54" y2="32" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="32" y1="10" x2="32" y2="54" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="32" cy="32" r="5" fill="none" stroke="#00ff88" stroke-width="1.8"/>
+        </svg>
+        <div class="raeng-lockup-text">
+          <div class="raeng-lockup-name">RAENG</div>
+          <div class="raeng-lockup-sub">แรง · IMPETUS</div>
+        </div>
+      </div>
+      <span class="project-badge raeng-badge">// personal project — live PWA</span>
+      <div class="project-title raeng-title">Raeng</div>
+      <div class="project-subtitle raeng-subtitle">แรง · IMPETUS &nbsp;·&nbsp; Workout Tracker PWA</div>
+      <p class="project-desc">
+        A full-stack mobile PWA for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs).
+        Built to live on an iPhone home screen. No browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Clerk auth, workout plan management, and a full export/account system.
+      </p>
+      <div class="project-features raeng-features">
+        <div class="feature-pill raeng-pill">5-day split tracker</div>
+        <div class="feature-pill raeng-pill">Auto rest timer</div>
+        <div class="feature-pill raeng-pill">Wave set logging</div>
+        <div class="feature-pill raeng-pill">Epley 1RM estimator</div>
+        <div class="feature-pill raeng-pill">Workout plan system</div>
+        <div class="feature-pill raeng-pill">Neon (Postgres) DB</div>
+        <div class="feature-pill raeng-pill">Clerk auth</div>
+        <div class="feature-pill raeng-pill">iOS PWA install</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">React</span>
+        <span class="tag">Vite</span>
+        <span class="tag">PWA</span>
+        <span class="tag">Neon (Postgres)</span>
+        <span class="tag">Clerk</span>
+        <span class="tag">Vercel</span>
+        <span class="tag">JavaScript</span>
+      </div>
+      <div class="hero-cta" style="margin-top: 1.5rem;">
+        <a class="btn raeng-btn-primary" href="https://raeng-impetus.vercel.app" target="_blank">Open App →</a>
+      </div>
+    </div>
+
+    <!-- GLOBAL MODE -->
+    <div class="project-featured project-gm">
+      <!-- Logo lockup top-right -->
+      <div class="card-logo-lockup gm-lockup" aria-hidden="true">
+        <svg class="gm-globe" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+          <circle cx="32" cy="32" r="28" stroke="#f5f2ec" stroke-width="1.5" stroke-opacity="0.9"/>
+          <ellipse cx="32" cy="32" rx="15" ry="28" stroke="#f5f2ec" stroke-width="1" stroke-opacity="0.5"/>
+          <ellipse cx="32" cy="32" rx="24" ry="28" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.25"/>
+          <ellipse cx="32" cy="22" rx="26" ry="6" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.4"/>
+          <line x1="4" y1="32" x2="60" y2="32" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.4"/>
+          <ellipse cx="32" cy="42" rx="26" ry="6" stroke="#f5f2ec" stroke-width="0.7" stroke-opacity="0.4"/>
+          <circle cx="32" cy="32" r="29" stroke="#0ecfc0" stroke-width="0.4" stroke-opacity="0.3"/>
+          <circle cx="44" cy="17" r="4" fill="#f0a500"/>
+        </svg>
+        <div class="gm-lockup-text">
+          <div class="gm-lockup-name">GLOBAL <span>MODE</span></div>
+        </div>
+      </div>
+      <span class="project-badge gm-badge">// personal project — phase 1</span>
+      <div class="project-title gm-title">Global Mode</div>
+      <div class="project-subtitle gm-subtitle">Road Trip Companion App · Thailand-first</div>
+      <p class="project-desc gm-desc">
+        Google Maps gets you from A to B. Global Mode gets you everywhere worth going in between.
+        A mobile-first travel app built for road trippers who want scenic routes, vibe filters, honest local data, and a co-driver experience, not just an ETA.
+      </p>
+      <div class="project-features gm-features">
+        <div class="feature-pill gm-pill">Vibe factor filters</div>
+        <div class="feature-pill gm-pill">Scenic road routing</div>
+        <div class="feature-pill gm-pill">Spoiler blocker toggle</div>
+        <div class="feature-pill gm-pill">Road quality ratings</div>
+        <div class="feature-pill gm-pill">Co-driver mode</div>
+        <div class="feature-pill gm-pill">SOS button</div>
+        <div class="feature-pill gm-pill">Fuel stop planner</div>
+        <div class="feature-pill gm-pill">Community data</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag gm-tag">React</span>
+        <span class="tag gm-tag">JavaScript</span>
+        <span class="tag gm-tag">Mobile-first</span>
+        <span class="tag gm-tag">Phase 1 — in progress</span>
+      </div>
+      <div class="hero-cta" style="margin-top: 1.5rem;">
+        <a class="btn gm-btn" href="global-mode/" target="_blank">View Landing Page →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>// hju.dev · built by henry james underwood · Thailand 🇹🇭 · <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- CHAT WIDGET -->
+  <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
+    <span class="chat-toggle-icon">//</span>
+  </button>
+
+  <div id="chat-panel">
+    <div class="chat-panel-header">
+      <span class="chat-panel-title">// ask about henry</span>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chat-log"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" maxlength="500">
+      <button id="chat-submit" class="btn btn-primary" type="submit">Send</button>
+    </form>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>

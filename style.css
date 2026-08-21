@@ -107,6 +107,10 @@ nav {
   color: var(--green);
 }
 
+.nav-links a[aria-current="page"] {
+  color: var(--green);
+}
+
 /* ================================
    SECTIONS
    ================================ */
@@ -122,6 +126,13 @@ section {
   margin: 0;
 }
 
+/* First section on non-home pages needs extra top clearance so the
+   fixed nav doesn't overlap its content (the hero handles this itself
+   with its own padding-top; other pages have no hero above them). */
+.first-section {
+  padding-top: 7rem;
+}
+
 /* ================================
    HERO
    ================================ */
@@ -133,6 +144,16 @@ section {
   padding-top: 5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+  overflow: hidden;
+}
+
+.hero-canvas-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-label {
@@ -1235,6 +1256,42 @@ section {
 }
 
 /* ================================
+   QUICKLINKS (home page)
+   ================================ */
+.quicklinks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.quicklink-card {
+  display: block;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.quicklink-card:hover {
+  border-color: var(--border-hover);
+}
+
+.quicklink-title {
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.quicklink-desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+/* ================================
    FOOTER
    ================================ */
 footer {
@@ -1328,6 +1385,10 @@ footer {
 
   .contact-inner {
     padding: 2.5rem;
+  }
+
+  .quicklinks-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 

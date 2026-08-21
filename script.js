@@ -39,6 +39,7 @@ let charIndex   = 0;
 let isDeleting  = false;
 
 const typingEl = document.getElementById('typing-cmd');
+// only present on the hero terminal (home page) -- other pages skip this entirely
 
 function type() {
   const currentPhrase = phrases[phraseIndex];
@@ -69,4 +70,6 @@ function type() {
   setTimeout(type, isDeleting ? 60 : 110);
 }
 
-type();
+if (typingEl) {
+  type();
+}

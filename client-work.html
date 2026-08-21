@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Work – hju.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html"><span>//</span> hju.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="client-work.html" aria-current="page">client work</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- CLIENT WORK -->
+  <section id="client-work" class="fade-in first-section">
+    <div class="section-header">
+      <span class="section-tag">// 01 — client work</span>
+      <h2 class="section-title">Delivered for clients.</h2>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Memory Matters — FLAGSHIP CLIENT -->
+      <div class="project-card client-card mm-card" style="grid-column: 1 / -1;">
+        <span class="project-badge mm-badge">// freelance · flagship · 2+ years maintained</span>
+        <div class="project-title-sm mm-title">Memory Matters</div>
+        <div class="project-subtitle mm-subtitle">Nonprofit brain health organization · Hilton Head Island, SC · mymemorymatters.org</div>
+        <p class="project-desc">Completely rebuilt and relaunched the site for a nationally recognized dementia care and brain health nonprofit serving the South Carolina Lowcountry. Took over a disorganized existing site and delivered a polished, professional rebuild. Then, stayed on as the sole developer maintaining and expanding it for over two years. The site handles a wide range of real-world nonprofit needs: multi-program listings, event calendars, newsletter signup, donation flows, caregiver support resources, a member portal, and multiple location pages. Built on Wix Studio with custom Velo/JavaScript for dynamic behavior beyond what the visual editor supports.</p>
+        <div class="project-tags">
+          <span class="tag">Wix Studio</span>
+          <span class="tag">Velo / JavaScript</span>
+          <span class="tag">Multi-program site</span>
+          <span class="tag">Donation flows</span>
+          <span class="tag">Event calendar</span>
+          <span class="tag">Member portal</span>
+          <span class="tag">2+ years maintained</span>
+        </div>
+        <div class="client-links">
+          <a class="btn mm-btn" href="https://www.mymemorymatters.org" target="_blank">Live Site →</a>
+        </div>
+      </div>
+
+      <!-- Grass Roots Sports -->
+      <div class="project-card client-card grs-card">
+        <div class="card-logo-lockup-sm grs-lockup" aria-hidden="true">
+          <img src="https://grassrootssports.org/logo.jpg" alt="Grass Roots Sports" class="grs-logo-img">
+        </div>
+        <span class="project-badge grs-badge">// freelance · built, awaiting launch</span>
+        <div class="project-title-sm grs-title">Grass Roots Sports</div>
+        <div class="project-subtitle grs-subtitle">Full-stack web app · Pattaya, Thailand</div>
+        <p class="project-desc">Built a full production web app for a sports nonprofit running youth, teen, and adult basketball programs. Features bilingual EN/TH routing, a multi-step registration form with PromptPay QR payment, email confirmations via Resend, a Sanity CMS for content management, Clerk authentication protecting an admin dashboard, and a Neon (Postgres) database for registrations and contact messages.</p>
+        <div class="project-tags">
+          <span class="tag">Next.js</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">Sanity CMS</span>
+          <span class="tag">Neon (Postgres)</span>
+          <span class="tag">Clerk</span>
+          <span class="tag">Bilingual EN/TH</span>
+        </div>
+        <div class="client-links">
+          <a class="btn grs-btn" href="https://grassrootssports.org" target="_blank">Live Site →</a>
+        </div>
+      </div>
+
+      <!-- Big T's Bakery -->
+      <div class="project-card client-card bts-card">
+        <div class="card-logo-lockup-sm bts-lockup" aria-hidden="true">
+          <img src="https://bigtsbakery.com/images/logo.png" alt="Big T's Bakery" class="bts-logo-img">
+        </div>
+        <span class="project-badge bts-badge">// freelance · delivered</span>
+        <div class="project-title-sm bts-title">Big T's Bakery</div>
+        <div class="project-subtitle bts-subtitle">Custom e-commerce site · Thailand</div>
+        <p class="project-desc">Hand-coded a bilingual (EN/TH) single-page bakery site from scratch after scoping out that a managed platform wasn't the right fit. Includes a live order builder with pack-size pricing, custom icing colour surcharges, a PromptPay QR checkout flow, and a LINE ordering integration. Deployed on GitHub Pages with a custom domain via Squarespace DNS.</p>
+        <div class="project-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">GitHub Pages</span>
+          <span class="tag">Bilingual EN/TH</span>
+        </div>
+        <div class="client-links">
+          <a class="btn bts-btn" href="https://bigtsbakery.com" target="_blank">Live Site →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>// hju.dev · built by henry james underwood · Thailand 🇹🇭 · <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- CHAT WIDGET -->
+  <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
+    <span class="chat-toggle-icon">//</span>
+  </button>
+
+  <div id="chat-panel">
+    <div class="chat-panel-header">
+      <span class="chat-panel-title">// ask about henry</span>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chat-log"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" maxlength="500">
+      <button id="chat-submit" class="btn btn-primary" type="submit">Send</button>
+    </form>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>
