@@ -82,6 +82,19 @@
   <script src="script.js"></script>
   <script src="neural-bg.js"></script>
 
+  <!-- MUSIC WIDGET -->
+  <div id="music-widget">
+    <div class="music-waveform" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <button id="music-toggle" aria-label="Play music">▶</button>
+    <button id="music-mute" aria-label="Mute music">mute</button>
+  </div>
+  <div id="yt-audio-player-wrap" aria-hidden="true">
+    <div id="yt-audio-player"></div>
+  </div>
+  <script src="music-widget.js"></script>
+
   <!-- CHAT WIDGET -->
   <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
     <span class="chat-toggle-icon">//</span>
