@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility – hju.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html"><span>//</span> hju.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="client-work.html">client work</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ACCESSIBILITY -->
+  <section id="accessibility" class="fade-in first-section">
+    <div class="section-header">
+      <span class="section-tag">// 01 — accessibility</span>
+      <h2 class="section-title">Accessibility statement.</h2>
+    </div>
+    <div class="about-text">
+      <p>This site is built and maintained by one person, and accessibility is treated as an ongoing part of that work, not a one-time checkbox. The goal is for anyone, regardless of ability or assistive technology, to be able to read this site's content and use its features.</p>
+
+      <p><strong>// what's already in place</strong></p>
+      <p>Semantic HTML is used throughout for headings, landmarks, and navigation, so screen readers can move through the page in a logical order. Interactive icon-only controls (the chat toggle, chat close, and music controls) carry <code>aria-label</code> attributes describing their function. The chat widget's open/close state is exposed via <code>aria-expanded</code>. Body text is set against a dark background at a contrast ratio intended to meet WCAG AA for normal text. The ambient neural-network animation in the hero automatically disables itself when a visitor's system has <code>prefers-reduced-motion</code> enabled, and no other motion on the site is essential to understanding its content. The site is fully navigable by keyboard, and layouts are responsive down to small mobile viewports.</p>
+
+      <p><strong>// known limitations</strong></p>
+      <p>This is a solo project and a work in progress. Some decorative elements (the hero canvas animation, brand-colored project cards) rely on color and motion as part of their visual identity; no information is conveyed by color alone, but a full manual audit against WCAG 2.1 AA has not yet been completed. If you encounter a barrier using this site with a screen reader, keyboard-only navigation, voice control, or any other assistive technology, that's a bug I want to know about.</p>
+
+      <p><strong>// feedback</strong></p>
+      <p>If any part of this site is difficult to use, please <a href="mailto:henryjunderwood@gmail.com">email me directly</a> with the page and the issue you ran into. I'll do my best to fix it and will treat accessibility reports as priority bugs.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>// hju.dev · built by henry james underwood · Thailand 🇹🇭 · <span id="year"></span></p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy</a>
+      <span>·</span>
+      <a href="accessibility.html" aria-current="page">Accessibility</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- MUSIC WIDGET -->
+  <div id="music-widget">
+    <div class="music-waveform" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <button id="music-toggle" aria-label="Play music">▶</button>
+    <button id="music-mute" aria-label="Mute music">mute</button>
+  </div>
+  <div id="yt-audio-player-wrap" aria-hidden="true">
+    <div id="yt-audio-player"></div>
+  </div>
+  <script src="music-widget.js"></script>
+
+  <!-- CHAT WIDGET -->
+  <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
+    <span class="chat-toggle-icon">//</span>
+  </button>
+
+  <div id="chat-panel">
+    <div class="chat-panel-header">
+      <span class="chat-panel-title">// ask about henry</span>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chat-log"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" maxlength="500">
+      <button id="chat-submit" class="btn btn-primary" type="submit">Send</button>
+    </form>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>

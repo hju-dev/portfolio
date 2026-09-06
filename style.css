@@ -345,6 +345,27 @@ section {
   margin-bottom: 1rem;
 }
 
+.about-text strong {
+  color: var(--green);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.about-text code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+}
+
+.about-text a {
+  color: var(--green);
+}
+
 .about-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1007,136 +1028,6 @@ section {
 }
 
 /* ================================
-   ROADMAP
-   ================================ */
-.roadmap {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  position: relative;
-}
-
-.roadmap::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--green) 0%, var(--border) 30%);
-}
-
-.roadmap-phase {
-  padding: 1.25rem 1rem 1.25rem 1.75rem;
-  border-left: 2px solid transparent;
-  margin-left: 0;
-  position: relative;
-  transition: background 0.2s;
-}
-
-.roadmap-phase::before {
-  content: '';
-  position: absolute;
-  left: -7px;
-  top: 1.75rem;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--bg3);
-  border: 2px solid var(--border);
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.roadmap-phase.active::before {
-  background: var(--green);
-  border-color: var(--green);
-  box-shadow: 0 0 8px var(--green-glow);
-}
-
-.roadmap-phase:hover {
-  background: rgba(0, 255, 136, 0.02);
-}
-
-.phase-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.4rem;
-  flex-wrap: wrap;
-}
-
-.phase-tag {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  padding: 2px 8px;
-  border-radius: 3px;
-}
-
-.status-active { background: rgba(0, 255, 136, 0.12); color: var(--green); }
-.status-queued { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
-
-.phase-months {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--text-dim);
-  letter-spacing: 0.08em;
-}
-
-.phase-title {
-  font-family: var(--mono);
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.75rem;
-}
-
-.roadmap-phase.active .phase-title {
-  color: var(--green);
-}
-
-.phase-items {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
-}
-
-.phase-items li {
-  font-size: 0.82rem;
-  color: var(--text);
-  padding-left: 1rem;
-  position: relative;
-}
-
-.phase-items li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--green);
-  font-family: var(--mono);
-}
-
-.phase-items li em {
-  color: var(--text);
-  font-style: normal;
-  font-weight: 500;
-}
-
-.phase-cert {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--text-dim);
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--border);
-}
-
-.cert-badge {
-  color: var(--green);
-}
-
-/* ================================
    CERTIFICATIONS
    ================================ */
 .certs-grid {
@@ -1307,6 +1198,23 @@ footer {
   font-size: 0.72rem;
   color: var(--text-dim);
   border-top: 1px solid var(--border);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--green);
 }
 
 /* ================================

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – hju.dev</title>
+  <title>Privacy – hju.dev</title>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,30 +16,37 @@
       <li><a href="about.html">about</a></li>
       <li><a href="projects.html">projects</a></li>
       <li><a href="client-work.html">client work</a></li>
-      <li><a href="contact.html" aria-current="page">contact</a></li>
+      <li><a href="contact.html">contact</a></li>
     </ul>
   </nav>
 
-  <!-- CONTACT -->
-  <section id="contact" class="fade-in first-section">
+  <!-- PRIVACY -->
+  <section id="privacy" class="fade-in first-section">
     <div class="section-header">
-      <span class="section-tag">// 01 — contact</span>
-      <h2 class="section-title">Let's talk.</h2>
+      <span class="section-tag">// 01 — privacy</span>
+      <h2 class="section-title">Privacy note.</h2>
     </div>
-    <div class="contact-inner">
-      <h3>Open to freelance & remote work</h3>
-      <p>AI chatbots · workflow automation · AI-powered tools · web development.<br>Got a project? Want to follow the build? Just say hello.</p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:henryjunderwood@gmail.com">Email</a>
-        <a class="btn btn-ghost" href="https://github.com/hju-dev" target="_blank">GitHub</a>
-      </div>
+    <div class="about-text">
+      <p>This is a personal portfolio, not a product collecting your data for profit. Here's exactly what happens when you use it.</p>
+
+      <p><strong>// browsing the site</strong></p>
+      <p>No analytics, no tracking pixels, and no cookies are used anywhere on this site. Nothing about your visit is logged or shared with a third party for advertising or tracking purposes.</p>
+
+      <p><strong>// the chat widget</strong></p>
+      <p>The "ask about henry" chat widget sends whatever you type to a backend endpoint I run, which uses Google's Gemini API to generate a response grounded in this site's content. To prevent abuse, your IP address is briefly checked against a rate limit (via Upstash Redis) and then discarded, it is not linked to your messages or stored long-term. Chat messages are not saved to a database and are not retained once your session ends; they exist only long enough to generate a reply.</p>
+
+      <p><strong>// contact &amp; email</strong></p>
+      <p>The "Email" link on the contact page opens your own email client via a <code>mailto:</code> link. Anything you send that way goes straight to my inbox the same as any other email; it doesn't pass through this site or get stored anywhere by the site itself.</p>
+
+      <p><strong>// questions</strong></p>
+      <p>If you have any questions about how this site handles data, <a href="mailto:henryjunderwood@gmail.com">email me</a> and I'll answer directly.</p>
     </div>
   </section>
 
   <footer>
     <p>// hju.dev · built by henry james underwood · Thailand 🇹🇭 · <span id="year"></span></p>
     <div class="footer-links">
-      <a href="privacy.html">Privacy</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
       <span>·</span>
       <a href="accessibility.html">Accessibility</a>
     </div>
