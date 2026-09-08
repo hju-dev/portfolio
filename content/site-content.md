@@ -13,6 +13,8 @@ He's currently moving into AI integration: Python, LangChain, the Anthropic and 
 
 Native English speaker based in Thailand. Solo operator. Available for remote contracts. No degree required, just results.
 
+He also builds personal projects (Raeng, Global Mode) to learn in public and keep shipping between client contracts.
+
 ## skills
 
 Languages: HTML (solid), CSS (solid), JavaScript (solid), Python (learning).
@@ -47,6 +49,8 @@ The site handles a wide range of real-world nonprofit needs: multi-program listi
 
 Tags: Wix Studio, Velo/JavaScript, multi-program site, donation flows, event calendar, member portal, 2+ years maintained.
 
+Outcome: still the developer maintaining the site today, over two years after the original rebuild shipped — the client has never needed to look for anyone else.
+
 ## client-grass-roots
 
 Grass Roots Sports is a full-stack web app built for a sports nonprofit in Pattaya, Thailand, running youth, teen, and adult basketball programs. Built (awaiting launch), it features bilingual EN/TH routing, a multi-step registration form with PromptPay QR payment, email confirmations via Resend, a Sanity CMS for content management, Clerk authentication protecting an admin dashboard, and a Neon (Postgres) database for registrations and contact messages.
@@ -55,10 +59,22 @@ Tags: Next.js, TypeScript, Tailwind CSS, Sanity CMS, Neon (Postgres), Clerk, bil
 
 ## client-bts-bakery
 
-Big T's Bakery is a custom e-commerce site for a bakery in Thailand. Henry hand-coded a bilingual (EN/TH) single-page site from scratch after scoping out that a managed platform wasn't the right fit. It includes a live order builder with pack-size pricing, custom icing colour surcharges, a PromptPay QR checkout flow, and a LINE ordering integration. Deployed on GitHub Pages with a custom domain via Squarespace DNS. Delivered and live.
+Big T's Bakery is a full-stack bilingual (EN/TH) bakery e-commerce site Henry built for a young entrepreneur in Thailand. It has a dynamic menu loaded from a Postgres database, a live cart with custom icing colour surcharges, a weekend-only date picker, and a payment slip upload flow using Vercel Blob. Orders hit an admin dashboard (Clerk-protected) with inline status management, full order detail views, and a menu CMS for adding new products. Notification emails fire via Resend on every order. Delivered and live, deployed on Vercel.
 
-Tags: HTML, CSS, JavaScript, GitHub Pages, bilingual EN/TH.
+Tags: Next.js, TypeScript, Tailwind CSS, Neon (Postgres), Vercel, Clerk, Resend, Vercel Blob, bilingual EN/TH.
 
 ## contact
 
-Henry is open to freelance and remote work: AI chatbots, workflow automation, AI-powered tools, and web development. To get in touch, email henryjunderwood@gmail.com or find him on GitHub at github.com/hju-dev.
+Henry is open to freelance and remote work: AI chatbots, workflow automation, AI-powered tools, and web development. To get in touch, email henryjunderwood@gmail.com or find him on GitHub at github.com/hju-dev. He typically replies within 2–3 business days.
+
+## faq
+
+Response time: within 2–3 business days, usually faster.
+
+Works with clients outside Thailand: yes, all client work so far has been fully remote (South Carolina, USA; Pattaya, Thailand). Works async-first, happy to overlap for calls when useful.
+
+Tech stack: defaults to Next.js, TypeScript, and Postgres for new builds, but matches an existing platform when that's the right call — Memory Matters runs on Wix Studio because that's what the client was already on and what's right for who maintains it day-to-day.
+
+Process for a new project: a short call or email exchange to scope what's needed, a plain-language proposal (what gets built, in what order, roughly when), then regular check-ins while building rather than one big reveal at the end.
+
+Post-launch maintenance: yes, depending on the project. Memory Matters is a real example — Henry has been the sole developer maintaining and expanding that site for 2+ years after the initial rebuild.
