@@ -14,8 +14,8 @@ There's also a small serverless backend (`api/`) for a RAG chat widget, which ne
 - `hju.dev` is **not a registered domain** (confirmed via DNS lookup — NXDOMAIN, doesn't resolve to anything). Don't assume it's live; it isn't.
 - GitHub Pages is **not currently serving the site** either — the GitHub Pages URL 404s, likely because the repo moved from `undie7/hju.dev` to `hju-dev/portfolio`, which can reset Pages settings. It has not been re-enabled.
 - The actual live site is the **Vercel** deployment at **`https://hju-dev.vercel.app`** — this serves the static files *and* runs `/api/chat`. This is the real production URL right now; all canonical/OG/sitemap URLs in the codebase point here.
-- Production Vercel env vars (`GEMINI_API_KEY`, `NEON_DATABASE_URL`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`) still need to be confirmed set in the Vercel dashboard (Preview env vars work; Production wasn't verified as of this note).
-- If/when Henry buys a custom domain, the setup is: add Production env vars in Vercel → add the domain in Vercel's project settings → add the DNS record Vercel provides at the registrar → update every `https://hju-dev.vercel.app` reference (meta tags, sitemap.xml, robots.txt, CLAUDE.md) to the new domain.
+- Production Vercel env vars (`GEMINI_API_KEY`, `NEON_DATABASE_URL`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`) are confirmed set, scoped to "Production and Preview" in the Vercel dashboard. `/api/chat` was smoke-tested live on `https://hju-dev.vercel.app` and works end-to-end, including retrieving the FAQ content added in September.
+- If/when Henry buys a custom domain, the remaining setup is: add the domain in Vercel's project settings → add the DNS record Vercel provides at the registrar → update every `https://hju-dev.vercel.app` reference (meta tags, sitemap.xml, robots.txt, CLAUDE.md) to the new domain.
 
 ---
 
