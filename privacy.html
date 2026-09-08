@@ -4,6 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy – hju.dev</title>
+  <meta name="description" content="hju.dev's privacy note — no analytics, no tracking, and exactly what happens when you use the AI chat widget.">
+  <link rel="canonical" href="https://hju.dev/privacy.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy – hju.dev">
+  <meta property="og:description" content="hju.dev's privacy note — no analytics, no tracking, and exactly what happens when you use the AI chat widget.">
+  <meta property="og:url" content="https://hju.dev/privacy.html">
+  <meta property="og:image" content="https://hju.dev/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy – hju.dev">
+  <meta name="twitter:description" content="hju.dev's privacy note — no analytics, no tracking, and exactly what happens when you use the AI chat widget.">
+  <meta name="twitter:image" content="https://hju.dev/og-image.png">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -30,7 +44,7 @@
       <p>This is a personal portfolio, not a product collecting your data for profit. Here's exactly what happens when you use it.</p>
 
       <p><strong>// browsing the site</strong></p>
-      <p>No analytics, no tracking pixels, and no cookies are used anywhere on this site. Nothing about your visit is logged or shared with a third party for advertising or tracking purposes.</p>
+      <p>No analytics, no tracking pixels, and no cookies are used anywhere on this site. Nothing about your visit is logged or shared with a third party for advertising or tracking purposes. The only browser storage in use is a single <code>localStorage</code> value that remembers whether you've muted the background music widget, it stays on your device, isn't sent anywhere, and doesn't identify you.</p>
 
       <p><strong>// the chat widget</strong></p>
       <p>The "ask about henry" chat widget sends whatever you type to a backend endpoint I run, which uses Google's Gemini API to generate a response grounded in this site's content. To prevent abuse, your IP address is briefly checked against a rate limit (via Upstash Redis) and then discarded, it is not linked to your messages or stored long-term. Chat messages are not saved to a database and are not retained once your session ends; they exist only long enough to generate a reply.</p>
