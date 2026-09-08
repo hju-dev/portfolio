@@ -83,11 +83,14 @@ async function sendMessage(message) {
       pending.textContent = data.answer;
     } else if (res.status === 429) {
       pending.textContent = data.message || "You've hit the question limit — try again later, or reach out via email/GitHub.";
+      pending.classList.add('chat-bubble-error');
     } else {
       pending.textContent = "Something went wrong. Try again in a moment, or reach out via email/GitHub.";
+      pending.classList.add('chat-bubble-error');
     }
   } catch (err) {
     pending.textContent = "Couldn't reach the server. Try again in a moment, or reach out via email/GitHub.";
+    pending.classList.add('chat-bubble-error');
   }
 
   pending.classList.remove('chat-bubble-pending');

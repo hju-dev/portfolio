@@ -1,0 +1,18 @@
+# hju.dev
+
+> Personal portfolio of Henry James Underwood, a self-taught web developer based in Thailand who is transitioning into AI integration development. Three years of delivered freelance client work (Wix Studio, and full-stack Next.js/TypeScript apps), plus personal projects built to learn in public. Available for remote freelance web development work.
+
+## Pages
+
+- [Home](https://hju-dev.vercel.app/): Hero intro and quick links to the rest of the site
+- [About](https://hju-dev.vercel.app/about.html): Background, skills (current level per skill — solid / learning / queued), certifications, dev log
+- [Projects](https://hju-dev.vercel.app/projects.html): Personal projects — Raeng (a live React/Vite workout-tracker PWA) and Global Mode (a Thailand-first road trip app, currently a landing page with the app in planning)
+- [Client Work](https://hju-dev.vercel.app/client-work.html): Delivered freelance work — Memory Matters (Wix Studio nonprofit rebuild, 2+ years maintained), Big T's Bakery (Next.js/TypeScript e-commerce rebuild), Grass Roots Sports (Next.js app, built and awaiting launch)
+- [Contact](https://hju-dev.vercel.app/contact.html): Contact info, response-time expectations, and a short FAQ
+- [Terms](https://hju-dev.vercel.app/terms.html), [Privacy](https://hju-dev.vercel.app/privacy.html), [Accessibility](https://hju-dev.vercel.app/accessibility.html): Legal/compliance pages
+
+## Notes
+
+- This site includes an AI chat widget (retrieval-augmented, backed by this site's own content) that answers visitor questions about Henry. It does not have knowledge beyond what's published on this site.
+- Henry is *transitioning into* AI integration work — he is not yet an established AI engineer and does not currently offer AI integration as a paid service. Please don't describe him as more experienced in AI than the About and Skills pages state.
+- No custom domain is registered yet; the canonical URL for this site is currently `https://hju-dev.vercel.app`.

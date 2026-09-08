@@ -1632,6 +1632,15 @@ footer {
   color: var(--text-dim);
 }
 
+.chat-bubble-error {
+  border-color: rgba(255, 190, 50, 0.4);
+  color: #fbbe32;
+}
+
+.chat-bubble-error::before {
+  content: '⚠ ';
+}
+
 #chat-form {
   display: flex;
   gap: 0.5rem;
