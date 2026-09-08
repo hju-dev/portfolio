@@ -40,7 +40,7 @@ There's also a small serverless backend (`api/`) for a RAG chat widget, which ne
 ├── favicon.svg, favicon-32x32.png, apple-touch-icon.png   # Site favicon
 ├── og-image.png, og-main-src.svg   # Social share image (+ editable source)
 ├── headshot.webp         # Real photo used on about.html
-├── robots.txt, sitemap.xml   # Point at the live Vercel URL until a custom domain exists
+├── robots.txt, sitemap.xml, llms.txt   # robots/sitemap point at the live Vercel URL until a custom domain exists
 ├── global-mode/          # Global Mode landing page (separate mini-site, own design system)
 │   ├── index.html
 │   ├── styles.css
@@ -48,8 +48,12 @@ There's also a small serverless backend (`api/`) for a RAG chat widget, which ne
 │   ├── favicon.svg, favicon-32x32.png, apple-touch-icon.png   # Its own favicon, navy/amber
 │   └── og-image.png, og-gm-src.svg   # Its own share image
 ├── api/                  # Vercel serverless functions (backend for the chat widget only)
-│   ├── chat.js            # POST /api/chat
-│   └── _lib/               # shared helpers, not routable
+│   ├── chat.js            # POST /api/chat -- streams the answer as plain text, see note below
+│   └── _lib/               # shared helpers, not routable (gemini.js's generateAnswerStream()
+│                            # is what chat.js actually calls; the older non-streaming
+│                            # generateAnswer() is still defined/exported but unused -- dead
+│                            # code as of this note, left in case streaming ever needs a
+│                            # buffered fallback, not a bug)
 ├── content/site-content.md   # RAG grounding content, manually maintained (not auto-derived from the HTML)
 ├── scripts/
 │   ├── schema.sql          # Neon/pgvector DDL, run manually via SQL editor
@@ -198,6 +202,7 @@ Do not add aspirational skills or projects that don't exist yet.
 - **Multi-page, not single-file** — the site is 9 separate HTML pages (see repo structure above) sharing one `style.css`. Don't assume `index.html` holds all the content.
 - **`api/` only works on Vercel** — it doesn't run on GitHub Pages (currently not even serving the site — see "Hosting" above), and doesn't run when previewing HTML files directly from disk either.
 - **`content/site-content.md` is the RAG source of truth, not the HTML pages** — they're not auto-synced. If you edit visitor-facing copy anywhere (skills, project descriptions, FAQ, etc.), also update the matching section in `content/site-content.md` and re-run `npm run ingest`, or the chat widget will answer from stale facts.
+- **`/api/chat`'s success response is streamed plain text, not JSON** — `res.writeHead(200, {'Content-Type': 'text/plain', ...})` then repeated `res.write()` calls as Gemini generates the answer, ending with `res.end()`. Source chunk ids ride in the `X-Chat-Sources` response header instead of the body, since headers are the only thing left to use once the body starts streaming. This only applies to the success path — every error response (400/429/500/503) is still small buffered JSON via `res.status().json()`, unchanged. `widget.js` reads the success path with `res.body.getReader()` (see `streamAnswerIntoBubble()`). Don't revert `/api/chat` to `res.json()` on success without also updating `widget.js` to match — they're a matched pair now, not independent.
 - **Backend secrets live in a local, gitignored `.env`** (see `.env.example` for the shape) and in Vercel's Preview/Production env vars — never in the repo.
 - **Mobile nav** — the nav has 5 links (home / about / projects / client work / contact); footer carries terms/privacy/accessibility separately. Check mobile before adding more to either.
 - **Re-read before editing** — always read the current file state before making changes; do not work from memory
