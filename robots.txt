@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://hju.dev/sitemap.xml
+Sitemap: https://hju-dev.vercel.app/sitemap.xml
