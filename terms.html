@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms – hju.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html"><span>//</span> hju.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="projects.html">projects</a></li>
+      <li><a href="client-work.html">client work</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- TERMS -->
+  <section id="terms" class="fade-in first-section">
+    <div class="section-header">
+      <span class="section-tag">// 01 — terms</span>
+      <h2 class="section-title">Terms of use.</h2>
+    </div>
+    <div class="about-text">
+      <p>This is a personal portfolio site. These terms are short on purpose, they cover the handful of things that actually apply to a site like this one, not a boilerplate wall of legal text.</p>
+
+      <p><strong>// site content</strong></p>
+      <p>The design, code, and writing on this site belong to Henry James Underwood, except where noted. Client logos and brand marks shown on the Client Work page belong to their respective owners and are used to identify the projects they relate to, not to imply endorsement. You're welcome to reference this site (e.g. linking to it, quoting a sentence with attribution), but please don't copy the site wholesale or pass off the code as your own.</p>
+
+      <p><strong>// the chat widget</strong></p>
+      <p>The "ask about henry" chat widget is an AI assistant that answers questions using this site's content as a reference. It's provided for convenience and can be wrong, incomplete, or out of date, it is not a substitute for verifying anything important directly (use the <a href="contact.html">contact page</a> for that). Don't rely on it for decisions where accuracy matters.</p>
+
+      <p><strong>// links to other sites</strong></p>
+      <p>Projects and Client Work link out to live apps and client sites (e.g. Raeng, Global Mode, Memory Matters, Grass Roots Sports, Big T's Bakery). Those sites are operated independently, and I'm not responsible for their content, availability, or how they handle your data once you leave hju.dev.</p>
+
+      <p><strong>// no warranty</strong></p>
+      <p>This site is provided as-is. I do my best to keep it accurate and working, but there's no guarantee it will be error-free, uninterrupted, or fit for any particular purpose.</p>
+
+      <p><strong>// changes</strong></p>
+      <p>These terms may be updated as the site changes. Significant changes will be reflected here with no separate notice, since this is a personal site rather than a service with accounts to notify.</p>
+
+      <p><strong>// contact</strong></p>
+      <p>Questions about these terms are welcome, <a href="mailto:henryjunderwood@gmail.com">email me</a> directly.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>// hju.dev · built by henry james underwood · Thailand 🇹🇭 · <span id="year"></span></p>
+    <div class="footer-links">
+      <a href="terms.html" aria-current="page">Terms</a>
+      <span>·</span>
+      <a href="privacy.html">Privacy</a>
+      <span>·</span>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- MUSIC WIDGET -->
+  <div id="music-widget">
+    <div class="music-waveform" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <button id="music-toggle" aria-label="Play music">▶</button>
+    <button id="music-mute" aria-label="Mute music">mute</button>
+  </div>
+  <div id="yt-audio-player-wrap" aria-hidden="true">
+    <div id="yt-audio-player"></div>
+  </div>
+  <script src="music-widget.js"></script>
+
+  <!-- CHAT WIDGET -->
+  <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
+    <span class="chat-toggle-icon">//</span>
+  </button>
+
+  <div id="chat-panel">
+    <div class="chat-panel-header">
+      <span class="chat-panel-title">// ask about henry</span>
+      <button id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="chat-log"></div>
+    <form id="chat-form">
+      <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" maxlength="500">
+      <button id="chat-submit" class="btn btn-primary" type="submit">Send</button>
+    </form>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>

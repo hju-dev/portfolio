@@ -462,7 +462,7 @@ section {
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 1.75rem;
-  transition: border-color 0.25s, transform 0.25s;
+  transition: border-color 0.25s;
   position: relative;
   overflow: hidden;
 }
@@ -482,7 +482,6 @@ section {
 
 .feature-card:hover {
   border-color: rgba(255,255,255,0.15);
-  transform: translateY(-4px);
 }
 
 .feature-card:hover::before {
