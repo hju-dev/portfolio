@@ -60,6 +60,37 @@ function appendMessage(role, text) {
 
 
 // ================================
+// STREAM
+// Reads the response body as it arrives and writes it into the bubble
+// progressively, instead of waiting for the full answer. Falls back to a
+// plain read if the browser doesn't support streaming response bodies.
+// ================================
+async function streamAnswerIntoBubble(res, bubble) {
+  if (!res.body || !res.body.getReader) {
+    bubble.textContent = await res.text();
+    return;
+  }
+
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let full = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    full += decoder.decode(value, { stream: true });
+    bubble.textContent = full;
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  if (!full) {
+    bubble.textContent = "Didn't get a response. Try again in a moment, or reach out via email/GitHub.";
+    bubble.classList.add('chat-bubble-error');
+  }
+}
+
+
+// ================================
 // SEND
 // ================================
 async function sendMessage(message) {
@@ -77,15 +108,15 @@ async function sendMessage(message) {
       body: JSON.stringify({ message: message }),
     });
 
-    const data = await res.json();
-
     if (res.ok) {
-      pending.textContent = data.answer;
-    } else if (res.status === 429) {
-      pending.textContent = data.message || "You've hit the question limit — try again later, or reach out via email/GitHub.";
-      pending.classList.add('chat-bubble-error');
+      await streamAnswerIntoBubble(res, pending);
     } else {
-      pending.textContent = "Something went wrong. Try again in a moment, or reach out via email/GitHub.";
+      const data = await res.json().catch(() => ({}));
+      if (res.status === 429) {
+        pending.textContent = data.message || "You've hit the question limit — try again later, or reach out via email/GitHub.";
+      } else {
+        pending.textContent = "Something went wrong. Try again in a moment, or reach out via email/GitHub.";
+      }
       pending.classList.add('chat-bubble-error');
     }
   } catch (err) {
