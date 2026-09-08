@@ -66,7 +66,7 @@ module.exports = async function handler(req, res) {
       }
     } catch (streamErr) {
       console.error('chat stream failed mid-response:', streamErr.message);
-      res.write('\n\n[TEMP DEBUG: ' + streamErr.message + ']');
+      res.write('\n\n[Something went wrong generating the rest of this answer. Try asking again.]');
     }
 
     res.end();
