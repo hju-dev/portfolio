@@ -41,6 +41,11 @@ async function checkRateLimit(req, url, token) {
 
     const ipResult = await limiter.limit(ip);
     if (!ipResult.success) {
+      // No IP logged here by design -- privacy.html promises the IP isn't
+      // retained beyond the rate-limit check itself. This still gives
+      // visibility into *how often* the limiter is triggering, which is
+      // enough to spot an abuse pattern without keeping who triggered it.
+      console.warn('Rate limit exceeded: per-IP cap hit');
       return { allowed: false, retryAfter: Math.ceil((ipResult.reset - Date.now()) / 1000) };
     }
 
@@ -48,6 +53,7 @@ async function checkRateLimit(req, url, token) {
     const count = await redisClient.incr(dayKey);
     if (count === 1) await redisClient.expire(dayKey, 60 * 60 * 24);
     if (count > GLOBAL_DAILY_LIMIT) {
+      console.warn('Rate limit exceeded: global daily cap hit', { count });
       return { allowed: false, retryAfter: 60 * 60 };
     }
 
