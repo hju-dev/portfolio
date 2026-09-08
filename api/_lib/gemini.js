@@ -86,7 +86,9 @@ async function* generateAnswerStream(apiKey, systemInstruction, userMessage) {
   while (true) {
     const { done, value } = await reader.read();
     if (done) break;
-    buffer += decoder.decode(value, { stream: true });
+    // Gemini's SSE stream uses \r\n\r\n between events, not bare \n\n --
+    // normalize so the \n\n split below actually matches.
+    buffer += decoder.decode(value, { stream: true }).replace(/\r\n/g, '\n');
 
     // SSE events are separated by a blank line; each event's "data:" line
     // holds one JSON chunk of the response.
