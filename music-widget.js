@@ -1,27 +1,46 @@
 // ================================
 // MUSIC WIDGET
 // Hidden YouTube-embedded background track with custom play/pause/mute
-// controls and a simulated waveform indicator. Starts on the visitor's
-// first interaction with the page -- browsers block audio-with-sound
-// from autoplaying on load, no way around that. The waveform animates
-// in sync with play state; it is not a real-time analysis of the
-// YouTube audio (cross-origin iframe audio isn't readable via the Web
-// Audio API), just a visual cue that music is playing.
+// controls, a soundscape picker, and a simulated waveform indicator.
+// Starts on the visitor's first interaction with the page -- browsers
+// block audio-with-sound from autoplaying on load, no way around that.
+// The waveform animates in sync with play state; it is not a real-time
+// analysis of the YouTube audio (cross-origin iframe audio isn't
+// readable via the Web Audio API), just a visual cue that music is
+// playing.
 // ================================
 const DEFAULT_YT_VIDEO_ID = 'UGZi9v6TFm4';
 const MUSIC_MUTED_KEY = 'musicMuted';
 const MUSIC_PAUSED_KEY = 'musicPaused';
+const MUSIC_TRACK_KEY = 'musicTrackId';
+
+// The full soundscape catalog, selectable from the dropdown on every
+// page regardless of that page's own default track below.
+const TRACKS = [
+  { id: 'UGZi9v6TFm4', name: 'plaza' },
+  { id: 'oxz0XHd8Rfw', name: 'pyramid' },
+  { id: 'yw4WXw9kiDg', name: 'rogue' },
+  { id: 'kzL0dEQzfz4', name: 'depths' },
+  { id: '9y7989LAITY', name: 'rain' },
+];
 
 const musicWidget = document.getElementById('music-widget');
 const musicToggle = document.getElementById('music-toggle');
 const musicMute = document.getElementById('music-mute');
-
-// Each page sets its own track via data-video-id on #music-widget;
-// falls back to the default if a page forgets to set one.
-const YT_VIDEO_ID = (musicWidget && musicWidget.dataset.videoId) || DEFAULT_YT_VIDEO_ID;
+const musicTrackToggle = document.getElementById('music-track-toggle');
+const musicTrackMenu = document.getElementById('music-track-menu');
+const musicTrackOptions = document.querySelectorAll('.music-track-option');
 
 let ytPlayer = null;
 let hasStartedOnce = false;
+
+// A track picked from the dropdown persists across page loads; a page's
+// own data-video-id is only the fallback for a first-ever visit.
+const storedTrackId = localStorage.getItem(MUSIC_TRACK_KEY);
+const isKnownTrack = TRACKS.some((t) => t.id === storedTrackId);
+let currentVideoId = isKnownTrack
+  ? storedTrackId
+  : (musicWidget && musicWidget.dataset.videoId) || DEFAULT_YT_VIDEO_ID;
 
 
 function storedMuted() {
@@ -45,6 +64,52 @@ function updateUI(playing, muted) {
     musicMute.textContent = muted ? 'unmute' : 'mute';
     musicMute.setAttribute('aria-label', muted ? 'Unmute music' : 'Mute music');
   }
+}
+
+
+function updateActiveTrackOption() {
+  musicTrackOptions.forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.videoId === currentVideoId);
+  });
+}
+
+
+// ================================
+// SOUNDSCAPE DROPDOWN
+// Drops upward, since the widget is pinned to the bottom of the page.
+// ================================
+function openTrackMenu() {
+  if (!musicTrackMenu) return;
+  musicTrackMenu.classList.add('open');
+  if (musicTrackToggle) musicTrackToggle.setAttribute('aria-expanded', 'true');
+}
+
+function closeTrackMenu() {
+  if (!musicTrackMenu) return;
+  musicTrackMenu.classList.remove('open');
+  if (musicTrackToggle) musicTrackToggle.setAttribute('aria-expanded', 'false');
+}
+
+function toggleTrackMenu() {
+  if (!musicTrackMenu) return;
+  if (musicTrackMenu.classList.contains('open')) {
+    closeTrackMenu();
+  } else {
+    openTrackMenu();
+  }
+}
+
+function selectTrack(videoId) {
+  closeTrackMenu();
+  if (videoId === currentVideoId) return;
+
+  currentVideoId = videoId;
+  localStorage.setItem(MUSIC_TRACK_KEY, videoId);
+  updateActiveTrackOption();
+
+  hasStartedOnce = true; // picking a track from the menu is itself the interaction gesture
+  localStorage.setItem(MUSIC_PAUSED_KEY, 'false');
+  if (ytPlayer) ytPlayer.loadVideoById(videoId);
 }
 
 
@@ -112,26 +177,45 @@ function onPlayerReady() {
 
 function onPlayerStateChange(event) {
   updateUI(event.data === YT.PlayerState.PLAYING, ytPlayer.isMuted());
+
+  // Looping is handled manually (rather than the loop/playlist player
+  // vars) so it keeps working correctly after the visitor switches
+  // tracks via the dropdown, not just for the video the player started
+  // with.
+  if (event.data === YT.PlayerState.ENDED) {
+    ytPlayer.seekTo(0);
+    ytPlayer.playVideo();
+  }
 }
 
 
+let triedFallbackTrack = false;
+
 function onPlayerError() {
-  // embedding disabled, video removed, etc. -- fail quietly, no broken widget
+  // embedding disabled, video removed, etc. Fall back to the default
+  // track once (a single broken soundscape shouldn't take the whole
+  // widget down); only hide the widget if even that fails.
+  if (!triedFallbackTrack && currentVideoId !== DEFAULT_YT_VIDEO_ID) {
+    triedFallbackTrack = true;
+    currentVideoId = DEFAULT_YT_VIDEO_ID;
+    localStorage.setItem(MUSIC_TRACK_KEY, DEFAULT_YT_VIDEO_ID);
+    updateActiveTrackOption();
+    if (ytPlayer) ytPlayer.loadVideoById(DEFAULT_YT_VIDEO_ID);
+    return;
+  }
   if (musicWidget) musicWidget.style.display = 'none';
 }
 
 
 window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   ytPlayer = new YT.Player('yt-audio-player', {
-    videoId: YT_VIDEO_ID,
+    videoId: currentVideoId,
     width: 1,
     height: 1,
     playerVars: {
       autoplay: 0,
       controls: 0,
       disablekb: 1,
-      loop: 1,
-      playlist: YT_VIDEO_ID, // YouTube requires this for loop to work on a single video
       playsinline: 1,
     },
     events: {
@@ -144,8 +228,19 @@ window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
 
 
 if (musicWidget) {
+  updateActiveTrackOption();
+
   if (musicToggle) musicToggle.addEventListener('click', togglePlay);
   if (musicMute) musicMute.addEventListener('click', toggleMute);
+  if (musicTrackToggle) musicTrackToggle.addEventListener('click', toggleTrackMenu);
+
+  musicTrackOptions.forEach((btn) => {
+    btn.addEventListener('click', () => selectTrack(btn.dataset.videoId));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!musicWidget.contains(e.target)) closeTrackMenu();
+  });
 
   const tag = document.createElement('script');
   tag.src = 'https://www.youtube.com/iframe_api';
