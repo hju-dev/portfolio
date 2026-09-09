@@ -1280,16 +1280,55 @@ section {
   color: var(--text);
 }
 
+.quicklink-cta {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: var(--green);
+  border-color: var(--green);
+  padding: 1.5rem 1.75rem;
+}
+
+.quicklink-cta .quicklink-title,
+.quicklink-cta .quicklink-desc {
+  color: var(--bg);
+}
+
+.quicklink-cta .quicklink-desc {
+  opacity: 0.75;
+}
+
+.quicklink-cta-arrow {
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--bg);
+  flex-shrink: 0;
+}
+
+.quicklink-cta:hover {
+  background: var(--green-dim);
+  border-color: var(--green-dim);
+}
+
 /* ================================
    FOOTER
    ================================ */
 footer {
   text-align: center;
-  padding: 1.5rem 1.25rem;
+  padding: 1.5rem 1.25rem 8.5rem;
   font-family: var(--mono);
   font-size: 0.72rem;
   color: var(--text-dim);
   border-top: 1px solid var(--border);
+}
+
+.footer-contact-btn {
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .footer-links {
@@ -1549,6 +1588,69 @@ footer {
 #chat-toggle:hover {
   background: var(--green-dim);
   border-color: var(--green-dim);
+}
+
+#chat-hint {
+  position: fixed;
+  bottom: 4.55rem;
+  right: 2.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 200;
+  opacity: 0;
+  transform-origin: bottom right;
+  animation: chatHintIn 0.6s 1.4s ease forwards, chatHintFloat 4.5s 2s ease-in-out infinite;
+}
+
+#chat-hint.chat-hint-dismissed {
+  display: none;
+}
+
+#chat-hint-bubble {
+  background: var(--bg2);
+  border: 1px solid var(--border-hover);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  white-space: nowrap;
+  margin-bottom: 0.3rem;
+}
+
+#chat-hint-text {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#chat-hint-text.chat-hint-fading {
+  opacity: 0;
+  transform: translateY(-3px);
+}
+
+#chat-hint-line {
+  width: 1.5px;
+  height: 26px;
+  background: linear-gradient(var(--green-dim), transparent);
+  opacity: 0.55;
+}
+
+@keyframes chatHintIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chatHintFloat {
+  0%, 100% { transform: rotate(-3deg) translateX(-1.5px); }
+  50%      { transform: rotate(3deg) translateX(1.5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #chat-hint {
+    animation: chatHintIn 0.6s 1.4s ease forwards;
+  }
 }
 
 #chat-panel {

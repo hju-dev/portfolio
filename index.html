@@ -82,14 +82,18 @@
         <div class="quicklink-title">Client Work</div>
         <div class="quicklink-desc">Delivered, hand-coded, production sites for real clients.</div>
       </a>
-      <a class="quicklink-card" href="contact.html">
-        <div class="quicklink-title">Contact</div>
-        <div class="quicklink-desc">Open to freelance &amp; remote work. Let's talk.</div>
+      <a class="quicklink-card quicklink-cta" href="contact.html">
+        <div>
+          <div class="quicklink-title">Contact</div>
+          <div class="quicklink-desc">Open to freelance &amp; remote work. Let's talk.</div>
+        </div>
+        <span class="quicklink-cta-arrow" aria-hidden="true">→</span>
       </a>
     </div>
   </section>
 
   <footer>
+    <a class="btn btn-primary footer-contact-btn" href="contact.html">Contact me</a>
     <p>// hju.dev · built by henry james underwood · Thailand 🇹🇭 · <span id="year"></span></p>
     <div class="footer-links">
       <a href="terms.html">Terms</a>
@@ -117,6 +121,10 @@
   <script src="music-widget.js"></script>
 
   <!-- CHAT WIDGET -->
+  <div id="chat-hint">
+    <div id="chat-hint-bubble"><span id="chat-hint-text">Ask me anything</span></div>
+    <div id="chat-hint-line" aria-hidden="true"></div>
+  </div>
   <button id="chat-toggle" aria-label="Open chat assistant" aria-expanded="false">
     <span class="chat-toggle-icon">//</span>
   </button>

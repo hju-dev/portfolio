@@ -10,8 +10,40 @@ const chatLog      = document.getElementById('chat-log');
 const chatForm     = document.getElementById('chat-form');
 const chatInput    = document.getElementById('chat-input');
 const chatSubmit   = document.getElementById('chat-submit');
+const chatHint     = document.getElementById('chat-hint');
+const chatHintText = document.getElementById('chat-hint-text');
 
 let chatOpened = false;
+
+
+// ================================
+// HINT BUBBLE
+// Cycles a few short prompts with a fade, until the visitor opens the chat.
+// ================================
+const chatHintPhrases = [
+  'Ask me anything',
+  'Do you have a question?',
+  'What would you like to know?',
+  'Curious about my work?',
+  'Got a project in mind?',
+];
+
+let chatHintIndex = 0;
+let chatHintTimer = null;
+
+function cycleChatHint() {
+  if (!chatHintText) return;
+  chatHintText.classList.add('chat-hint-fading');
+  setTimeout(() => {
+    chatHintIndex = (chatHintIndex + 1) % chatHintPhrases.length;
+    chatHintText.textContent = chatHintPhrases[chatHintIndex];
+    chatHintText.classList.remove('chat-hint-fading');
+  }, 400);
+}
+
+if (chatHintText && chatHintPhrases.length > 1) {
+  chatHintTimer = setInterval(cycleChatHint, 4000);
+}
 
 
 // ================================
@@ -21,6 +53,11 @@ function openChat() {
   if (!chatPanel) return;
   chatPanel.classList.add('open');
   chatToggle.setAttribute('aria-expanded', 'true');
+  if (chatHint) chatHint.classList.add('chat-hint-dismissed');
+  if (chatHintTimer) {
+    clearInterval(chatHintTimer);
+    chatHintTimer = null;
+  }
 
   if (!chatOpened) {
     // first open — greet once
