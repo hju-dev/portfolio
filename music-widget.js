@@ -8,13 +8,17 @@
 // YouTube audio (cross-origin iframe audio isn't readable via the Web
 // Audio API), just a visual cue that music is playing.
 // ================================
-const YT_VIDEO_ID = 'UGZi9v6TFm4';
+const DEFAULT_YT_VIDEO_ID = 'UGZi9v6TFm4';
 const MUSIC_MUTED_KEY = 'musicMuted';
 const MUSIC_PAUSED_KEY = 'musicPaused';
 
 const musicWidget = document.getElementById('music-widget');
 const musicToggle = document.getElementById('music-toggle');
 const musicMute = document.getElementById('music-mute');
+
+// Each page sets its own track via data-video-id on #music-widget;
+// falls back to the default if a page forgets to set one.
+const YT_VIDEO_ID = (musicWidget && musicWidget.dataset.videoId) || DEFAULT_YT_VIDEO_ID;
 
 let ytPlayer = null;
 let hasStartedOnce = false;
