@@ -1599,8 +1599,7 @@ footer {
   align-items: flex-end;
   z-index: 200;
   opacity: 0;
-  transform-origin: bottom right;
-  animation: chatHintIn 0.6s 1.4s ease forwards, chatHintFloat 4.5s 2s ease-in-out infinite;
+  animation: chatHintIn 0.6s 1.4s ease forwards, chatHintDrift 7s 2s ease-in-out infinite;
 }
 
 #chat-hint.chat-hint-dismissed {
@@ -1632,9 +1631,11 @@ footer {
 
 #chat-hint-line {
   width: 1.5px;
-  height: 26px;
-  background: linear-gradient(var(--green-dim), transparent);
-  opacity: 0.55;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.32);
+  margin-top: 4px;
+  transform: rotate(315deg);
+  transform-origin: bottom center;
 }
 
 @keyframes chatHintIn {
@@ -1642,9 +1643,9 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes chatHintFloat {
-  0%, 100% { transform: rotate(-3deg) translateX(-1.5px); }
-  50%      { transform: rotate(3deg) translateX(1.5px); }
+@keyframes chatHintDrift {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(1px, -1.5px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
