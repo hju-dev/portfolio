@@ -17,8 +17,9 @@ let chatOpened = false;
 
 
 // ================================
-// HINT BUBBLE
-// Cycles a few short prompts with a fade, until the visitor opens the chat.
+// HINT PILL
+// Styled like the music pill. Cycles a few short prompts with a fade
+// until the visitor opens the chat; clicking it opens the chat too.
 // ================================
 const chatHintPhrases = [
   'Ask me anything',
@@ -176,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   chatToggle.addEventListener('click', toggleChat);
   chatClose.addEventListener('click', closeChat);
+  if (chatHint) chatHint.addEventListener('click', openChat);
 
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
