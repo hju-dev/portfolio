@@ -46,7 +46,7 @@ function typeChatHint() {
 
     if (chatHintCharIndex === current.length) {
       chatHintDeleting = true;
-      chatHintTimer = setTimeout(typeChatHint, 1800);
+      chatHintTimer = setTimeout(typeChatHint, 10000);
       return;
     }
   } else {
