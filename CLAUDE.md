@@ -186,7 +186,7 @@ To add a new phrase to the typing animation, edit the `phrases` array in `script
 
 Henry is a self-taught developer transitioning into AI integration. His background:
 - **Delivered client work:** Memory Matters (Wix Studio, 2+ years), Grass Roots Sports (Next.js, awaiting launch), Big T's Bakery (Next.js/TypeScript/Neon/Clerk full-stack rebuild, live)
-- **Personal projects:** Raeng (React/Vite PWA, Neon, Clerk, Vercel), Global Mode (landing page only, app in planning)
+- **Personal projects:** Raeng (React/Vite PWA, Neon, Neon Auth, Vercel), Global Mode (landing page only, app in planning)
 - **Currently learning:** CS50 Python → Anthropic/OpenAI APIs → LangChain → RAG
 - **Target stack:** Python, AI APIs, full-stack JS/TS
 

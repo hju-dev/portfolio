@@ -27,11 +27,11 @@ Next up: FastAPI, AWS, System Design, Vector Databases (all queued).
 
 ## project-raeng
 
-Raeng (แรง · IMPETUS) is a full-stack mobile workout tracker PWA built for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs). Built to live on an iPhone home screen. No browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Clerk auth, workout plan management, and a full export/account system.
+Raeng (แรง · IMPETUS) is a full-stack mobile workout tracker PWA built for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs). Built to live on an iPhone home screen. No browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Neon Auth, workout plan management, and a full export/account system.
 
-Features: 5-day split tracker, auto rest timer, wave set logging, Epley 1RM estimator, workout plan system, Neon (Postgres) database, Clerk auth, iOS PWA install.
+Features: 5-day split tracker, auto rest timer, wave set logging, Epley 1RM estimator, workout plan system, Neon (Postgres) database, Neon Auth, iOS PWA install, inline exercise editor, interval logging.
 
-Stack: React, Vite, PWA, Neon (Postgres), Clerk, Vercel, JavaScript. Live at raeng-impetus.vercel.app.
+Stack: React, Vite, PWA, Neon (Postgres), Neon Auth, Vercel, JavaScript. Live at raeng-impetus.vercel.app.
 
 ## project-global-mode
 
