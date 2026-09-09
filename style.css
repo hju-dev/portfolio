@@ -1625,12 +1625,17 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  vertical-align: middle;
 }
 
-#chat-hint-text.chat-hint-fading {
-  opacity: 0;
-  transform: translateY(-3px);
+#chat-hint-cursor {
+  display: inline-block;
+  width: 5px;
+  height: 10px;
+  margin-left: 2px;
+  background: var(--green);
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes chatHintIn {

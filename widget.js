@@ -18,32 +18,53 @@ let chatOpened = false;
 
 // ================================
 // HINT PILL
-// Styled like the music pill. Cycles a few short prompts with a fade
-// until the visitor opens the chat; clicking it opens the chat too.
+// Styled like the music pill. Types/deletes a few short prompts like
+// the hero terminal's typing animation, until the visitor opens the
+// chat; clicking the pill opens the chat too.
 // ================================
 const chatHintPhrases = [
-  'Ask me anything',
-  'Do you have a question?',
-  'What would you like to know?',
-  'Curious about my work?',
-  'Got a project in mind?',
+  'ask me anything...',
+  "what's up?",
+  'questions?',
+  'check this out...',
+  'hey! over here!',
 ];
 
-let chatHintIndex = 0;
-let chatHintTimer = null;
+let chatHintPhraseIndex = 0;
+let chatHintCharIndex   = 0;
+let chatHintDeleting    = false;
+let chatHintActive      = true;
+let chatHintTimer       = null;
 
-function cycleChatHint() {
-  if (!chatHintText) return;
-  chatHintText.classList.add('chat-hint-fading');
-  setTimeout(() => {
-    chatHintIndex = (chatHintIndex + 1) % chatHintPhrases.length;
-    chatHintText.textContent = chatHintPhrases[chatHintIndex];
-    chatHintText.classList.remove('chat-hint-fading');
-  }, 400);
+function typeChatHint() {
+  if (!chatHintText || !chatHintActive) return;
+  const current = chatHintPhrases[chatHintPhraseIndex];
+
+  if (!chatHintDeleting) {
+    chatHintCharIndex++;
+    chatHintText.textContent = current.slice(0, chatHintCharIndex);
+
+    if (chatHintCharIndex === current.length) {
+      chatHintDeleting = true;
+      chatHintTimer = setTimeout(typeChatHint, 1800);
+      return;
+    }
+  } else {
+    chatHintCharIndex--;
+    chatHintText.textContent = current.slice(0, chatHintCharIndex);
+
+    if (chatHintCharIndex === 0) {
+      chatHintDeleting = false;
+      chatHintPhraseIndex = (chatHintPhraseIndex + 1) % chatHintPhrases.length;
+    }
+  }
+
+  chatHintTimer = setTimeout(typeChatHint, chatHintDeleting ? 45 : 90);
 }
 
-if (chatHintText && chatHintPhrases.length > 1) {
-  chatHintTimer = setInterval(cycleChatHint, 4000);
+if (chatHintText) {
+  // start once the pill has faded into view (matches its CSS entrance delay)
+  chatHintTimer = setTimeout(typeChatHint, 2000);
 }
 
 
@@ -55,8 +76,9 @@ function openChat() {
   chatPanel.classList.add('open');
   chatToggle.setAttribute('aria-expanded', 'true');
   if (chatHint) chatHint.classList.add('chat-hint-dismissed');
+  chatHintActive = false;
   if (chatHintTimer) {
-    clearInterval(chatHintTimer);
+    clearTimeout(chatHintTimer);
     chatHintTimer = null;
   }
 
