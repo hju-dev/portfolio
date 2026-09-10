@@ -177,3 +177,8 @@ npm run ingest   # needs local .env with GEMINI_API_KEY + NEON_INGEST_DATABASE_U
 # Next action: none required — this thread is closed. Only revisit the
 # RAG-skill-status / chatbot-devlog gap if the user raises it again.
 ```
+
+## Session Closed
+**Closed at:** 2026-09-10 10:00 SEAST
+**Commit:** `b4a0d2c`
+**Session status:** Handed off to next session
