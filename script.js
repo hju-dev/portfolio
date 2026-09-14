@@ -73,3 +73,47 @@ function type() {
 if (typingEl) {
   type();
 }
+
+
+// ================================
+// MOBILE NAV TOGGLE
+// Hamburger menu shown below the 900px
+// desktop breakpoint (see style.css)
+// ================================
+const navToggle = document.getElementById('nav-toggle');
+const navLinks   = document.getElementById('nav-links');
+
+if (navToggle && navLinks) {
+  const closeMenu = () => {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    navLinks.classList.remove('is-open');
+  };
+
+  const openMenu = () => {
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Close menu');
+    navLinks.classList.add('is-open');
+  };
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // tapping a link should close the dropdown, not leave it open
+  // behind the page you just navigated to
+  navLinks.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') closeMenu();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // reset state if the viewport grows back past the desktop
+  // breakpoint while the menu happens to be open
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 900) closeMenu();
+  });
+}
