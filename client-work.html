@@ -43,7 +43,7 @@
   <section id="client-work" class="fade-in first-section">
     <div class="section-header">
       <span class="section-tag">// 01 — client work</span>
-      <h2 class="section-title">Delivered for clients.</h2>
+      <h1 class="section-title">Delivered for clients.</h1>
     </div>
     <div class="projects-grid">
 
@@ -71,7 +71,7 @@
       <!-- Big T's Bakery -->
       <div class="project-card client-card bts-card" style="grid-column: 1 / -1;">
         <div class="card-logo-lockup-sm bts-lockup" aria-hidden="true">
-          <img src="https://bigtsbakery.com/images/logo.png" alt="Big T's Bakery" class="bts-logo-img">
+          <img src="https://bigtsbakery.com/images/logo.png" alt="Big T's Bakery" class="bts-logo-img" loading="lazy">
         </div>
         <span class="project-badge bts-badge">// freelance · delivered</span>
         <div class="project-title-sm bts-title">Big T's Bakery</div>
@@ -96,7 +96,7 @@
       <!-- Grass Roots Sports -->
       <div class="project-card client-card grs-card" style="grid-column: 1 / -1;">
         <div class="card-logo-lockup-sm grs-lockup" aria-hidden="true">
-          <img src="https://grassrootssports.org/logo.jpg" alt="Grass Roots Sports" class="grs-logo-img">
+          <img src="https://grassrootssports.org/logo.jpg" alt="Grass Roots Sports" class="grs-logo-img" loading="lazy">
         </div>
         <span class="project-badge grs-badge">// freelance · built, awaiting launch</span>
         <div class="project-title-sm grs-title">Grass Roots Sports</div>
@@ -145,13 +145,7 @@
     <button id="music-toggle" aria-label="Play music">▶</button>
     <button id="music-mute" aria-label="Mute music">mute</button>
     <button id="music-track-toggle" aria-label="Choose soundscape" aria-expanded="false">▾</button>
-    <div id="music-track-menu" role="menu">
-      <button class="music-track-option" data-video-id="UGZi9v6TFm4" role="menuitemradio">plaza</button>
-      <button class="music-track-option" data-video-id="oxz0XHd8Rfw" role="menuitemradio">pyramid</button>
-      <button class="music-track-option" data-video-id="A7lLHJ6yfH0" role="menuitemradio">agent</button>
-      <button class="music-track-option" data-video-id="kzL0dEQzfz4" role="menuitemradio">depths</button>
-      <button class="music-track-option" data-video-id="9y7989LAITY" role="menuitemradio">rain</button>
-    </div>
+    <div id="music-track-menu" role="menu"></div>
   </div>
   <div id="yt-audio-player-wrap" aria-hidden="true">
     <div id="yt-audio-player"></div>
@@ -166,14 +160,14 @@
     <span class="chat-toggle-icon">//</span>
   </button>
 
-  <div id="chat-panel">
+  <div id="chat-panel" role="dialog" aria-modal="true" aria-label="Ask about Henry">
     <div class="chat-panel-header">
       <span class="chat-panel-title">// ask about henry</span>
       <button id="chat-close" aria-label="Close chat">✕</button>
     </div>
-    <div id="chat-log"></div>
+    <div id="chat-log" aria-live="polite"></div>
     <form id="chat-form">
-      <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" maxlength="500">
+      <input id="chat-input" type="text" placeholder="Ask a question..." aria-label="Ask a question" autocomplete="off" maxlength="500">
       <button id="chat-submit" class="btn btn-primary" type="submit">Send</button>
     </form>
   </div>

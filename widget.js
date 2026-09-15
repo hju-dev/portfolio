@@ -95,6 +95,7 @@ function closeChat() {
   if (!chatPanel) return;
   chatPanel.classList.remove('open');
   chatToggle.setAttribute('aria-expanded', 'false');
+  chatToggle.focus();
 }
 
 function toggleChat() {
@@ -207,5 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!message) return;
     chatInput.value = '';
     sendMessage(message);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && chatPanel.classList.contains('open')) closeChat();
   });
 });

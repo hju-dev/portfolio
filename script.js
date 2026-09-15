@@ -117,3 +117,46 @@ if (navToggle && navLinks) {
     if (window.innerWidth >= 900) closeMenu();
   });
 }
+
+
+// ================================
+// WIDGET OCCLUSION GUARD
+// The music player and chat button are pinned to the bottom corners on
+// every page. On short viewports their footprint can land on top of a
+// call-to-action button that also sits near the bottom of the layout
+// (the hero CTAs, the homepage's Contact quicklink, the footer's
+// "Contact me" button). Fade the widgets out whenever any of those CTAs
+// enters that shared bottom zone, rather than special-casing each page.
+// ================================
+const occlusionTargets = document.querySelectorAll('.hero-cta, .quicklink-cta, .footer-contact-btn');
+
+if (occlusionTargets.length) {
+  const WIDGET_ZONE = 100; // px from the bottom of the viewport the fixed widgets occupy
+  let checkQueued = false;
+
+  const checkOcclusion = () => {
+    checkQueued = false;
+    const zoneTop = window.innerHeight - WIDGET_ZONE;
+    const anyNear = Array.from(occlusionTargets).some((el) => {
+      const rect = el.getBoundingClientRect();
+      return rect.bottom > zoneTop && rect.top < window.innerHeight;
+    });
+    document.body.classList.toggle('widgets-yield', anyNear);
+  };
+
+  const queueCheck = () => {
+    if (checkQueued) return;
+    checkQueued = true;
+    requestAnimationFrame(checkOcclusion);
+  };
+
+  window.addEventListener('scroll', queueCheck, { passive: true });
+  window.addEventListener('resize', queueCheck);
+  window.addEventListener('load', queueCheck);
+  // web fonts swapping in after first paint can reflow the layout enough
+  // to change whether a CTA sits in the widgets' zone
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(queueCheck);
+  }
+  queueCheck();
+}

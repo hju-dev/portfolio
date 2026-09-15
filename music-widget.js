@@ -14,6 +14,13 @@ const MUSIC_MUTED_KEY = 'musicMuted';
 const MUSIC_PAUSED_KEY = 'musicPaused';
 const MUSIC_TRACK_KEY = 'musicTrackId';
 
+// A first-ever visit has no stored preference at all -- treat that as an
+// explicit "paused" default rather than letting storedPaused() read the
+// absence as consent to autoplay on the visitor's first click anywhere.
+if (localStorage.getItem(MUSIC_PAUSED_KEY) === null) {
+  localStorage.setItem(MUSIC_PAUSED_KEY, 'true');
+}
+
 // The full soundscape catalog, selectable from the dropdown on every
 // page regardless of that page's own default track below.
 const TRACKS = [
@@ -29,7 +36,6 @@ const musicToggle = document.getElementById('music-toggle');
 const musicMute = document.getElementById('music-mute');
 const musicTrackToggle = document.getElementById('music-track-toggle');
 const musicTrackMenu = document.getElementById('music-track-menu');
-const musicTrackOptions = document.querySelectorAll('.music-track-option');
 
 let ytPlayer = null;
 let hasStartedOnce = false;
@@ -68,8 +74,28 @@ function updateUI(playing, muted) {
 
 
 function updateActiveTrackOption() {
-  musicTrackOptions.forEach((btn) => {
+  if (!musicTrackMenu) return;
+  musicTrackMenu.querySelectorAll('.music-track-option').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.videoId === currentVideoId);
+  });
+}
+
+
+// Renders the soundscape menu from TRACKS instead of hand-writing the
+// same five buttons in every page's HTML -- the HTML and this list drifted
+// out of sync before (a menu option pointed at a video id TRACKS didn't
+// have), silently reverting the visitor's choice on the next page load.
+function renderTrackMenu() {
+  if (!musicTrackMenu) return;
+  musicTrackMenu.innerHTML = '';
+  TRACKS.forEach((track) => {
+    const btn = document.createElement('button');
+    btn.className = 'music-track-option';
+    btn.dataset.videoId = track.id;
+    btn.setAttribute('role', 'menuitemradio');
+    btn.textContent = track.name;
+    btn.addEventListener('click', () => selectTrack(track.id));
+    musicTrackMenu.appendChild(btn);
   });
 }
 
@@ -228,15 +254,12 @@ window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
 
 
 if (musicWidget) {
+  renderTrackMenu();
   updateActiveTrackOption();
 
   if (musicToggle) musicToggle.addEventListener('click', togglePlay);
   if (musicMute) musicMute.addEventListener('click', toggleMute);
   if (musicTrackToggle) musicTrackToggle.addEventListener('click', toggleTrackMenu);
-
-  musicTrackOptions.forEach((btn) => {
-    btn.addEventListener('click', () => selectTrack(btn.dataset.videoId));
-  });
 
   document.addEventListener('click', (e) => {
     if (!musicWidget.contains(e.target)) closeTrackMenu();
