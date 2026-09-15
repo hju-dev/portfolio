@@ -498,3 +498,8 @@ npm run ingest   # needs local .env with GEMINI_API_KEY + NEON_INGEST_DATABASE_U
 # RAG/skills-status gap from the prior session, or the unexplored graphify question,
 # and only if the user raises any of them.
 ```
+
+## Session Closed
+**Closed at:** 2026-09-16 06:29 SEAST
+**Commit:** `c88068f`
+**Session status:** Handed off to next session
