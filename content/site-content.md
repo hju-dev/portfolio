@@ -27,9 +27,9 @@ Next up: FastAPI, AWS, System Design, Vector Databases (all queued).
 
 ## project-raeng
 
-Raeng (แรง · IMPETUS) is a full-stack mobile workout tracker PWA built for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs). Built to live on an iPhone home screen. No browser chrome, thumb-nav, rest timers, session summaries, and estimated 1RM via the Epley formula. Backed by Neon (Postgres) with Neon Auth, workout plan management, and a full export/account system.
+Raeng (แรง · IMPETUS) is a full-stack mobile workout tracker PWA built for a structured 5-day lifting split (Upper / Lower / Pull / Push / Legs), built to live on an iPhone home screen with no browser chrome. It has background-safe rest timers and a workout stopwatch, wave-set logging with live weight calculations, Epley 1RM estimates, and a post-workout debrief with PR detection and estimated calories. Workouts can be scheduled and synced to iOS Calendar, exercises edited inline, sets skipped or completed in one tap, and the app unlocked quickly with a PIN layered over real Neon Auth sign-in (username or email). Backed by Neon (Postgres) with a custom sign-in rate limiter, full data export, and account management.
 
-Features: 5-day split tracker, auto rest timer, wave set logging, Epley 1RM estimator, workout plan system, Neon (Postgres) database, Neon Auth, iOS PWA install, inline exercise editor, interval logging.
+Features: 5-day split tracker, background-safe rest timer, wave set logging, Epley 1RM estimator, workout plan system, weekly schedule with iOS Calendar sync, post-workout debrief with PR detection, inline exercise editor, skip/complete tracking, PIN quick-unlock, username login, benchmark/AMRAP workouts, Neon (Postgres) database, Neon Auth, iOS PWA install.
 
 Stack: React, Vite, PWA, Neon (Postgres), Neon Auth, Vercel, JavaScript. Live at raeng-impetus.vercel.app.
 
@@ -62,6 +62,18 @@ Tags: Next.js, TypeScript, Tailwind CSS, Sanity CMS, Neon (Postgres), Clerk, bil
 Big T's Bakery is a full-stack bilingual (EN/TH) bakery e-commerce site Henry built for a young entrepreneur in Thailand. It has a dynamic menu loaded from a Postgres database, a live cart with custom icing colour surcharges, a weekend-only date picker, and a payment slip upload flow using Vercel Blob. Orders hit an admin dashboard (Clerk-protected) with inline status management, full order detail views, and a menu CMS for adding new products. Notification emails fire via Resend on every order. Delivered and live, deployed on Vercel.
 
 Tags: Next.js, TypeScript, Tailwind CSS, Neon (Postgres), Vercel, Clerk, Resend, Vercel Blob, bilingual EN/TH.
+
+## client-jaad
+
+JÄAD (จ๊าด) is a cafe-by-day, cocktail-bar-and-live-DJ-lounge-by-dusk venue in Ayutthaya, Thailand, reopening under new ownership at an existing address (same owners as the prior "Red Cup" bar/restaurant). Henry built a full-stack bilingual (EN/TH) site and CMS: Next.js 16 (App Router) with Payload CMS 3.x embedded directly in the app, a Neon (Postgres) database, and Vercel Blob for media, deployed on Vercel with git-based auto-deploy.
+
+Six public routes (Home, Menu, Events, About, Gallery, Visit) are all content-editable through Payload's admin panel, not hardcoded. The defining feature is a Day/Dusk toggle — not a dark-mode preference but a real content switch that swaps hero photography, copy, and atmosphere between cafe hours and cocktail-bar/live-DJ hours, paired with a matching EN/TH language toggle using Payload's native field-level localization; both are built as a shared, custom animated sliding switch. The CMS is real: MenuItems, Events, and GalleryPhotos collections, SiteSettings/PhotoPlacements/PageCopy globals, and native Payload admin auth with real per-person logins. The admin panel itself is custom-branded to the client's visual identity, with a deliberate split between decorative display type and a plain, readable typeface for every field an admin actually uses. Content edits reach the live site within about a minute via ISR, with no redeploy required. Reservations route through a LINE deep link (the local standard for Thai businesses) instead of a generic contact form. SEO includes sitemap.xml and robots.txt via Next's file-based generators, JSON-LD Restaurant schema generated live from the CMS's own SiteSettings data, and a real Google Maps embed. Henry also ran a full accessibility audit and fixed WCAG AA contrast failures, missing heading hierarchy, and undersized touch/text targets.
+
+Tags: Next.js, TypeScript, Payload CMS, Neon (Postgres), Vercel, Vercel Blob, bilingual EN/TH, Day/Dusk theming.
+
+Outcome: what shipped as the client's real production site started as a speculative, fully-working live prototype built to win the pitch — not a mockup or slide deck, an actual working site. Once the client committed, it was migrated in place to the full CMS/database/production stack: real data, real admin logins, real reservations.
+
+Live at jaad.vercel.app.
 
 ## contact
 

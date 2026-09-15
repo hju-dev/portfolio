@@ -26,7 +26,7 @@ There's also a small serverless backend (`api/`) for a RAG chat widget, which ne
 ├── index.html           # Home — hero, "explore" quicklinks only (not the whole site)
 ├── about.html           # About / skills / certifications / dev log
 ├── projects.html        # Personal projects — Raeng, Global Mode
-├── client-work.html     # Client work — Memory Matters, Big T's Bakery, Grass Roots Sports
+├── client-work.html     # Client work — Memory Matters, Big T's Bakery, Grass Roots Sports, JÄAD
 ├── contact.html         # Contact + FAQ + response-time promise
 ├── accessibility.html   # Accessibility statement
 ├── privacy.html         # Privacy note
@@ -153,10 +153,12 @@ Padding rule: `.grs-card .project-badge` etc. `{ padding-right: 7rem }`
 | Memory Matters | `#04111f → #071d35` | `#4ab4e6` sky blue | `.mm-card` |
 | Grass Roots Sports | `#050e05 → #0a1a0a` | `#a3e635` lime | `.grs-card` |
 | Big T's Bakery | `#1a0a08 → #221210` | `#e8826a` coral | `.bts-card` |
+| JÄAD | `#2a1013 → #170a0c` | `#f5a623` amber/gold | `.jaad-card` |
 
 Client logos are loaded from live URLs — do not copy them into this repo:
 - Grass Roots: `https://grassrootssports.org/logo.jpg`
 - Big T's: `https://bigtsbakery.com/images/logo.png`
+- JÄAD: no logo lockup (matches the Memory Matters card's no-logo pattern)
 
 ---
 
@@ -185,8 +187,8 @@ To add a new phrase to the typing animation, edit the `phrases` array in `script
 ## What Henry is working toward
 
 Henry is a self-taught developer transitioning into AI integration. His background:
-- **Delivered client work:** Memory Matters (Wix Studio, 2+ years), Grass Roots Sports (Next.js, awaiting launch), Big T's Bakery (Next.js/TypeScript/Neon/Clerk full-stack rebuild, live)
-- **Personal projects:** Raeng (React/Vite PWA, Neon, Neon Auth, Vercel), Global Mode (landing page only, app in planning)
+- **Delivered client work:** Memory Matters (Wix Studio, 2+ years), Grass Roots Sports (Next.js, awaiting launch), Big T's Bakery (Next.js/TypeScript/Neon/Clerk full-stack rebuild, live), JÄAD (Next.js/Payload CMS/Neon bilingual cafe-bar site with a Day/Dusk content toggle, live)
+- **Personal projects:** Raeng (React/Vite PWA, Neon, Neon Auth, Vercel — now with scheduling/iOS Calendar sync, PR detection, and PIN unlock), Global Mode (landing page only, app in planning)
 - **Currently learning:** CS50 Python → Anthropic/OpenAI APIs → LangChain → RAG
 - **Target stack:** Python, AI APIs, full-stack JS/TS
 

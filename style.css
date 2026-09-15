@@ -888,6 +888,66 @@ section {
 }
 
 /* ================================
+   JÄAD CARD
+   Colors borrow the real site's own "Dusk" theme
+   (deep maroon surface, amber/gold accent).
+   ================================ */
+.jaad-card {
+  background: linear-gradient(135deg, #2a1013 0%, #170a0c 100%);
+  border-color: rgba(245, 166, 35, 0.2);
+}
+
+.jaad-card:hover {
+  border-color: rgba(245, 166, 35, 0.5);
+}
+
+.jaad-badge {
+  background: rgba(245, 166, 35, 0.1);
+  color: #f5a623;
+}
+
+.jaad-title {
+  color: #ffffff;
+}
+
+.jaad-subtitle {
+  color: rgba(245, 166, 35, 0.6);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.jaad-card .project-desc {
+  color: rgba(245, 233, 221, 0.75);
+}
+
+.jaad-card .tag {
+  border-color: rgba(245, 166, 35, 0.2);
+  color: rgba(245, 166, 35, 0.7);
+}
+
+.jaad-btn {
+  background: transparent;
+  color: #f5a623;
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.jaad-btn:hover {
+  border-color: #f5a623;
+  background: rgba(245, 166, 35, 0.08);
+}
+
+/* ================================
    PROJECT CARDS GRID
    ================================ */
 .projects-grid {
