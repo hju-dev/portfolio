@@ -30,6 +30,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keyboard focus only — mouse/touch interaction doesn't trigger
+   :focus-visible, so clicking never shows this ring, only tabbing does. */
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -2006,7 +2014,6 @@ body.widgets-yield #chat-toggle {
   font-family: var(--sans);
   font-size: 0.85rem;
   color: var(--text);
-  outline: none;
   transition: border-color 0.2s;
   min-width: 0;
 }
